@@ -15,7 +15,7 @@ class OnboardingView extends GetView<OnboardingController> {
           Container(
             width: double.infinity,
             child: Padding(
-              padding: const EdgeInsets.only(left: 20, top: 48),
+              padding: const EdgeInsets.only(left: 20, top: 20),
               child: Row(
                 children: [
                     SizedBox(
@@ -38,13 +38,17 @@ class OnboardingView extends GetView<OnboardingController> {
                   fontWeight: FontWeight.bold),
             ),
             SizedBox(
-              width: 95,
+              width: 80,
             ),
-             Text('skip',
-              style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                  fontFamily: 'poppins')),
+             CircleAvatar(
+              radius: 25,
+              backgroundColor: Color(0xff0F5697),
+               child: Text('skip',
+                style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    fontFamily: 'poppins')),
+             ),
                 ],
               ),
             ),

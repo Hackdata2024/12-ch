@@ -1,4 +1,6 @@
 import 'package:acadease/app/modules/attendance/views/attendance_view.dart';
+import 'package:acadease/app/modules/attendance/views/manual_attendance.dart';
+import 'package:acadease/models/student_model.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -16,8 +18,14 @@ class ChooseClass extends StatefulWidget {
 class _ChooseClassState extends State<ChooseClass> {
   String choosecourse = 'Computer Science';
   String choosesection = 'A';
-  String semester = '1st';
+  String choosesemester = '1st';
+  List<Student> filteredStudents = [];
   @override
+  void init() {
+    super.initState();
+    filteredStudents.clear();
+  }
+
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
@@ -77,8 +85,8 @@ class _ChooseClassState extends State<ChooseClass> {
                   child: Text('Electrical Engineering'),
                 ),
                 DropdownMenuItem<String>(
-                  value: 'Mechnical Enginerring',
-                  child: Text('Electrical Engineering'),
+                  value: 'Mechanical Enginerring',
+                  child: Text('Mechanical Engineering'),
                 ),
                 DropdownMenuItem<String>(
                   value: 'Civil',
@@ -99,7 +107,6 @@ class _ChooseClassState extends State<ChooseClass> {
           ),
           Container(
             height: 45,
-            
             decoration: BoxDecoration(
               border: Border.all(color: Colors.grey), // Set border color
               borderRadius:
@@ -111,7 +118,7 @@ class _ChooseClassState extends State<ChooseClass> {
                 color: Colors.black,
               ),
               alignment: Alignment.center,
-              // buttonStyleData: ButtonStyleData(width: 200),
+              buttonStyleData: ButtonStyleData(width: 200),
               value: choosesection,
               // icon: Icon(Icons.arrow_drop_down),
               // iconSize: 24,
@@ -148,6 +155,77 @@ class _ChooseClassState extends State<ChooseClass> {
                   value: 'C',
                   child: Text('C'),
                 ),
+                DropdownMenuItem<String>(
+                  value: 'D',
+                  child: Text('D'),
+                ),
+              ],
+            ),
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          Text(
+            'Choose Semester',
+            style: TextStyle(fontSize: 25, fontWeight: FontWeight.w400),
+          ),
+          SizedBox(
+            height: 7,
+          ),
+          Container(
+            height: 45,
+            decoration: BoxDecoration(
+              border: Border.all(color: Colors.grey), // Set border color
+              borderRadius:
+                  BorderRadius.circular(6.0), // Set border radius if desired
+            ),
+            child: DropdownButton2<String>(
+              // padding: EdgeInsets.only(left: 10),
+              underline: Container(
+                color: Colors.black,
+              ),
+              alignment: Alignment.center,
+              buttonStyleData: ButtonStyleData(width: 200),
+              value: choosesemester,
+              // icon: Icon(Icons.arrow_drop_down),
+              // iconSize: 24,
+              // elevation: 16,
+              // style: TextStyle(
+              //   color: Colors.grey,
+              // ),
+              style: GoogleFonts.montserrat(
+                textStyle: TextStyle(
+                  color: Colors.grey,
+                  fontSize: 15,
+                  fontWeight: FontWeight.w600,
+                  // You can set other text style properties here
+                ),
+              ),
+              // underline: Container(color: backgroundColor),
+              onChanged: (newValue) {
+                setState(() {
+                  choosesemester = newValue!;
+                });
+              },
+              items: [
+                DropdownMenuItem<String>(
+                  value: '1st',
+                  child: Text(
+                    '1st',
+                  ),
+                ),
+                DropdownMenuItem<String>(
+                  value: '2nd',
+                  child: Text('2nd'),
+                ),
+                DropdownMenuItem<String>(
+                  value: '3rd',
+                  child: Text('3rd'),
+                ),
+                DropdownMenuItem<String>(
+                  value: '4th',
+                  child: Text('4th'),
+                ),
               ],
             ),
           ),
@@ -160,7 +238,17 @@ class _ChooseClassState extends State<ChooseClass> {
                 style: ElevatedButton.styleFrom(
                     backgroundColor: Color(0xfffb0F5697)),
                 onPressed: () {
-                  Get.to(AttendanceView());
+                  setState(() {});
+                  for (var student in students_list) {
+                    if (student.course == choosecourse &&
+                        student.section == choosesection &&
+                        student.semester == choosesemester) {
+                      print(student.name);
+                      filteredStudents.add(student);
+                    }
+                  }
+                  Get.to(AttendanceView(), arguments: filteredStudents);
+                  // Get.to(ManualAttendance(student_list: filteredStudents));
                 },
                 child: Center(
                   child: Text('Take Attendance'),
