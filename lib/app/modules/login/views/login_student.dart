@@ -1,13 +1,18 @@
-import 'package:acadease/app/modules/home/views/home_view.dart';
-import 'package:acadease/app/modules/signup/views/signup_view.dart';
+import 'package:acadease/app/modules/login/views/login_view.dart';
+import 'package:acadease/app/modules/signup/views/signup_student.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-
+import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 
-import '../controllers/login_controller.dart';
+class LoginStudent extends StatefulWidget {
+  const LoginStudent({super.key});
 
-class LoginView extends GetView<LoginController> {
-  const LoginView({Key? key}) : super(key: key);
+  @override
+  State<LoginStudent> createState() => _LoginStudentState();
+}
+
+class _LoginStudentState extends State<LoginStudent> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -60,7 +65,7 @@ class LoginView extends GetView<LoginController> {
                     child: Column(
                       children: [
                         Text(
-                          "Login",
+                          "Welcome Student",
                           style: TextStyle(
                               color: Colors.yellow,
                               fontSize: 30,
@@ -156,6 +161,9 @@ class LoginView extends GetView<LoginController> {
                       controller: TextEditingController(),
                     ),
                   ),
+                  const SizedBox(
+                    height: 10,
+                  ),
                   // Padding(
                   //   padding: const EdgeInsets.only(left: 10, top: 40),
                   //   child: CustomButton(
@@ -177,21 +185,19 @@ class LoginView extends GetView<LoginController> {
                                 minimumSize: Size.fromHeight(40),
                                 shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(30))),
-                            onPressed: () {
-                              Get.off(HomeView());
-                            },
+                            onPressed: () {},
                             child: Center(
                               child: Text('Login'),
                             )),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Text("Don't Have an Account "),
+                            Text("Don't have an Account"),
                             TextButton(
                                 onPressed: () {
-                                  Get.off(SignupView());
+                                  Get.off(SignupStudent());
                                 },
-                                child: Text('Create Now'))
+                                child: Text('create Now'))
                           ],
                         )
                       ],
