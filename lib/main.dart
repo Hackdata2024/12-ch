@@ -1,3 +1,4 @@
+import 'package:acadease/app/modules/assessment/views/assessment_view.dart';
 import 'package:acadease/app/modules/attendance/views/attendance_view.dart';
 import 'package:acadease/app/modules/attendance/views/choose_class.dart';
 import 'package:acadease/app/modules/login/views/login_view.dart';
