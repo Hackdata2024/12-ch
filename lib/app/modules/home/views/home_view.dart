@@ -1,3 +1,5 @@
+import 'package:acadease/app/modules/attendance/views/attendance_view.dart';
+import 'package:acadease/app/modules/attendance/views/choose_class.dart';
 import 'package:acadease/app/modules/profile_page/views/profile_page_view.dart';
 import 'package:acadease/app/modules/resources/views/resources_view.dart';
 import 'package:flutter/material.dart';
@@ -7,7 +9,7 @@ import 'package:get/get.dart';
 import '../controllers/home_controller.dart';
 
 class HomeView extends GetView<HomeController> {
-   const HomeView({Key? key}) : super(key: key);
+  const HomeView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,8 +51,7 @@ class HomeView extends GetView<HomeController> {
         backgroundColor: const Color(0xff0F5697),
         centerTitle: true,
       ),
-      body: 
-      Padding(
+      body: Padding(
         padding: const EdgeInsets.only(top: 10, left: 8, right: 8),
         child: Column(
           children: [
@@ -229,27 +230,32 @@ class HomeView extends GetView<HomeController> {
               children: [
                 Row(
                   children: [
-                    Container(
-                      height: 120,
-                      width: 112,
-                      decoration: BoxDecoration(
-                        color: const Color(0xff0F5697),
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                      child: const Column(
-                        children: [
-                          SizedBox(
-                            height: 10,
-                          ),
-                          Image(image: AssetImage("assets/Attendance.png")),
-                          Text(
-                            'ATTENDANCE',
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 16,
-                                fontWeight: FontWeight.w500),
-                          ),
-                        ],
+                    InkWell(
+                      onTap: () {
+                        Get.to(ChooseClass());
+                      },
+                      child: Container(
+                        height: 120,
+                        width: 112,
+                        decoration: BoxDecoration(
+                          color: const Color(0xff0F5697),
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        child: const Column(
+                          children: [
+                            SizedBox(
+                              height: 10,
+                            ),
+                            Image(image: AssetImage("assets/Attendance.png")),
+                            Text(
+                              'ATTENDANCE',
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w500),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                     const SizedBox(
@@ -374,34 +380,41 @@ class HomeView extends GetView<HomeController> {
           ],
         ),
       ),
-      
-  bottomNavigationBar:BottomNavigationBar(
-        
-  // type: BottomNavigationBarType.shifting,
-  // selectedFontSize: 10,
-  // selectedIconTheme: const IconThemeData(color: Colors.white),
-  // selectedItemColor: Colors.amberAccent,
-  // selectedLabelStyle: const TextStyle(fontWeight: FontWeight.bold),
-  // unselectedIconTheme: const IconThemeData(
-  //   color: Colors.deepOrangeAccent,
-  // ),
-  // unselectedItemColor: Colors.deepOrangeAccent,
-  backgroundColor: const Color(0xff0F5697),
-    items: const <BottomNavigationBarItem>[
-      BottomNavigationBarItem(
-        icon: Icon(Icons.person,color: Color(0xffffffff),),
-        label: 'Profile',
+      bottomNavigationBar: BottomNavigationBar(
+        // type: BottomNavigationBarType.shifting,
+        // selectedFontSize: 10,
+        // selectedIconTheme: const IconThemeData(color: Colors.white),
+        // selectedItemColor: Colors.amberAccent,
+        // selectedLabelStyle: const TextStyle(fontWeight: FontWeight.bold),
+        // unselectedIconTheme: const IconThemeData(
+        //   color: Colors.deepOrangeAccent,
+        // ),
+        // unselectedItemColor: Colors.deepOrangeAccent,
+        backgroundColor: const Color(0xff0F5697),
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.person,
+              color: Color(0xffffffff),
+            ),
+            label: 'Profile',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.home,
+              color: Color(0xffffffff),
+            ),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.chat,
+              color: Color(0xffffffff),
+            ),
+            label: 'Chats',
+          ),
+        ],
       ),
-      BottomNavigationBarItem(
-        icon: Icon(Icons.home,color: Color(0xffffffff),),
-        label: 'Home',
-      ),
-      BottomNavigationBarItem(
-        icon: Icon(Icons.chat,color: Color(0xffffffff),),
-        label: 'Chats',
-      ),
-    ],
-  ),
     );
   }
 }

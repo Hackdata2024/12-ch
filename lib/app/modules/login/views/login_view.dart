@@ -1,3 +1,4 @@
+import 'package:acadease/app/modules/home/views/home_view.dart';
 import 'package:acadease/app/modules/signup/views/signup_view.dart';
 import 'package:flutter/material.dart';
 
@@ -176,7 +177,9 @@ class LoginView extends GetView<LoginController> {
                                 minimumSize: Size.fromHeight(40),
                                 shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(30))),
-                            onPressed: () {},
+                            onPressed: () {
+                              Get.off(HomeView());
+                            },
                             child: Center(
                               child: Text('Login'),
                             )),

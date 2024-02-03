@@ -1,6 +1,8 @@
+import 'package:acadease/app/modules/login/views/login_student.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:get/get.dart';
 
 class SignupStudent extends StatelessWidget {
   const SignupStudent({super.key});
@@ -57,7 +59,7 @@ class SignupStudent extends StatelessWidget {
                     child: Column(
                       children: [
                         Text(
-                          "Create Your Account",
+                          "Welcome Student",
                           style: TextStyle(
                               color: Colors.yellow,
                               fontSize: 30,
@@ -220,11 +222,11 @@ class SignupStudent extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text("Don't Have an Account "),
-                            // TextButton(
-                            //     onPressed: () {
-                            //       Get.off(SignupView());
-                            //     },
-                            //     child: Text('Create Now'))
+                            TextButton(
+                                onPressed: () {
+                                  Get.off(LoginStudent());
+                                },
+                                child: Text('Create Now'))
                           ],
                         )
                       ],

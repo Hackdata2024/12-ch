@@ -59,7 +59,7 @@ class SignupView extends GetView<SignupController> {
                     child: Column(
                       children: [
                         Text(
-                          "Create Your Account",
+                          "Welcome teacher",
                           style: TextStyle(
                               color: Colors.yellow,
                               fontSize: 30,
