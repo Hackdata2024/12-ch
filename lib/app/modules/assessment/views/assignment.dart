@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
-import '../controllers/resources_controller.dart';
+import '../controllers/assessment_controller.dart';
 
-class ResourcesView extends GetView<ResourcesController> {
-  const ResourcesView({Key? key}) : super(key: key);
+class Assignment extends GetView<AssessmentController> {
+  const Assignment({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,7 +19,7 @@ class ResourcesView extends GetView<ResourcesController> {
           padding: const EdgeInsets.only(right: 50),
           child: Center(
               child: Text(
-            "Resources",
+            "Assignment",
             style: TextStyle(
                 color: Colors.white, fontSize: 25, fontWeight: FontWeight.bold),
           )),
@@ -102,47 +102,6 @@ class ResourcesView extends GetView<ResourcesController> {
               ),
             ),
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: InkWell(
-                    onTap: () {},
-                    child: Container(
-                      width: 100,
-                      child: TextButton(
-                        onPressed: () {},
-                        child: Text(
-                          'ADD',
-                          style: TextStyle(color: Colors.white, fontSize: 16),
-                        ),
-                      ),
-                      decoration: BoxDecoration(
-                          color: Color(0xfff0F5697),
-                          borderRadius: BorderRadius.circular(12)),
-                    )),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: InkWell(
-                    onTap: () {},
-                    child: Container(
-                      width: 100,
-                      child: TextButton(
-                        onPressed: () {},
-                        child: Text(
-                          'EDIT',
-                          style: TextStyle(color: Colors.white, fontSize: 16),
-                        ),
-                      ),
-                      decoration: BoxDecoration(
-                          color: Color(0xfff0F5697),
-                          borderRadius: BorderRadius.circular(12)),
-                    )),
-              ),
-            ],
-          )
         ],
       ),
     );
