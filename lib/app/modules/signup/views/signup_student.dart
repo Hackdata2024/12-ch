@@ -84,8 +84,8 @@ class _SignupStudentState extends State<SignupStudent> {
             Container(
               height: 90,
               width: 200,
-              child: Padding(
-                padding: const EdgeInsets.only(left: 20, top: 48),
+              child: const Padding(
+                padding: EdgeInsets.only(left: 20, top: 48),
                 child: Row(
                   children: [
                     Text(
@@ -116,7 +116,7 @@ class _SignupStudentState extends State<SignupStudent> {
                       top: 180,
                       left: 10,
                     ),
-                    child: Column(
+                    child: const Column(
                       children: [
                         Text(
                           "Welcome Student",
@@ -132,7 +132,7 @@ class _SignupStudentState extends State<SignupStudent> {
                         Text(
                           "Sign in to Continue",
                           style: TextStyle(
-                              color: const Color(0xff0066FF),
+                              color: Color(0xff0066FF),
                               fontSize: 12,
                               fontWeight: FontWeight.w500,
                               fontFamily: 'poppins'),
@@ -140,15 +140,15 @@ class _SignupStudentState extends State<SignupStudent> {
                       ],
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 80,
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(right: 200),
+                  const Padding(
+                    padding: EdgeInsets.only(right: 200),
                     child: Text(
                       "Please Enter Email",
                       style: TextStyle(
-                          color: const Color(0xff545454),
+                          color: Color(0xff545454),
                           fontSize: 9,
                           fontWeight: FontWeight.w500,
                           fontFamily: 'poppins'),
@@ -163,26 +163,26 @@ class _SignupStudentState extends State<SignupStudent> {
                       keyboardType: TextInputType.emailAddress,
                       decoration: InputDecoration(
                         contentPadding:
-                            EdgeInsets.symmetric(vertical: 10, horizontal: 12),
+                            const EdgeInsets.symmetric(vertical: 10, horizontal: 12),
                         hintText: 'Email',
                         hoverColor: const Color(0xffFF5757),
                         fillColor: Colors.white,
                         filled: true,
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(22),
-                          borderSide: BorderSide(
-                              color: const Color(0xffFF5757), width: 2.0),
+                          borderSide: const BorderSide(
+                              color: Color(0xffFF5757), width: 2.0),
                         ),
                       ),
                       controller: _emailController,
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(right: 180),
+                  const Padding(
+                    padding: EdgeInsets.only(right: 180),
                     child: Text(
                       "Please Enter Your Name",
                       style: TextStyle(
-                          color: const Color(0xff545454),
+                          color: Color(0xff545454),
                           fontSize: 9,
                           fontWeight: FontWeight.w500,
                           fontFamily: 'poppins'),
@@ -196,26 +196,26 @@ class _SignupStudentState extends State<SignupStudent> {
                     child: TextField(
                       decoration: InputDecoration(
                         contentPadding:
-                            EdgeInsets.symmetric(vertical: 10, horizontal: 12),
+                            const EdgeInsets.symmetric(vertical: 10, horizontal: 12),
                         hintText: 'Enter Your Name',
                         hoverColor: const Color(0xffFF5757),
                         fillColor: Colors.white,
                         filled: true,
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(22),
-                          borderSide: BorderSide(
-                              color: const Color(0xffFF5757), width: 2.0),
+                          borderSide: const BorderSide(
+                              color: Color(0xffFF5757), width: 2.0),
                         ),
                       ),
                       controller: _nameController,
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(right: 200),
+                  const Padding(
+                    padding: EdgeInsets.only(right: 200),
                     child: Text(
                       "Please Enter Roll No",
                       style: TextStyle(
-                          color: const Color(0xff545454),
+                          color: Color(0xff545454),
                           fontSize: 9,
                           fontWeight: FontWeight.w500,
                           fontFamily: 'poppins'),
@@ -230,15 +230,15 @@ class _SignupStudentState extends State<SignupStudent> {
                       keyboardType: TextInputType.emailAddress,
                       decoration: InputDecoration(
                         contentPadding:
-                            EdgeInsets.symmetric(vertical: 10, horizontal: 12),
+                            const EdgeInsets.symmetric(vertical: 10, horizontal: 12),
                         hintText: 'Your Roll No',
                         hoverColor: const Color(0xffFF5757),
                         fillColor: Colors.white,
                         filled: true,
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(22),
-                          borderSide: BorderSide(
-                              color: const Color(0xffFF5757), width: 2.0),
+                          borderSide: const BorderSide(
+                              color: Color(0xffFF5757), width: 2.0),
                         ),
                       ),
                       controller: _enrollmentController,
@@ -291,11 +291,11 @@ class _SignupStudentState extends State<SignupStudent> {
                   //         Get.to(OnboardingView());
                   //       }),
                   // )
-                  Text(
+                  const Text(
                     'Choose Your Class',
                     style: TextStyle(fontSize: 25, fontWeight: FontWeight.w400),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 7,
                   ),
                   Container(
@@ -320,7 +320,7 @@ class _SignupStudentState extends State<SignupStudent> {
                       //   color: Colors.grey,
                       // ),
                       style: GoogleFonts.montserrat(
-                        textStyle: TextStyle(
+                        textStyle: const TextStyle(
                           color: Colors.grey,
                           fontSize: 15,
                           fontWeight: FontWeight.w600,
@@ -334,35 +334,35 @@ class _SignupStudentState extends State<SignupStudent> {
                         });
                       },
                       items: [
-                        DropdownMenuItem<String>(
+                        const DropdownMenuItem<String>(
                           value: 'Computer Science',
                           child: Text(
                             'Computer Science',
                           ),
                         ),
-                        DropdownMenuItem<String>(
+                        const DropdownMenuItem<String>(
                           value: 'Electrical Engineering',
                           child: Text('Electrical Engineering'),
                         ),
-                        DropdownMenuItem<String>(
+                        const DropdownMenuItem<String>(
                           value: 'Mechanical Enginerring',
                           child: Text('Mechanical Engineering'),
                         ),
-                        DropdownMenuItem<String>(
+                        const DropdownMenuItem<String>(
                           value: 'Civil',
                           child: Text('Civil'),
                         ),
                       ],
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 30,
                   ),
-                  Text(
+                  const Text(
                     'Choose Section',
                     style: TextStyle(fontSize: 25, fontWeight: FontWeight.w400),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 7,
                   ),
                   Container(
@@ -379,7 +379,7 @@ class _SignupStudentState extends State<SignupStudent> {
                         color: Colors.black,
                       ),
                       alignment: Alignment.center,
-                      buttonStyleData: ButtonStyleData(width: 200),
+                      buttonStyleData: const ButtonStyleData(width: 200),
                       value: choosesection,
                       // icon: Icon(Icons.arrow_drop_down),
                       // iconSize: 24,
@@ -388,7 +388,7 @@ class _SignupStudentState extends State<SignupStudent> {
                       //   color: Colors.grey,
                       // ),
                       style: GoogleFonts.montserrat(
-                        textStyle: TextStyle(
+                        textStyle: const TextStyle(
                           color: Colors.grey,
                           fontSize: 15,
                           fontWeight: FontWeight.w600,
@@ -402,35 +402,35 @@ class _SignupStudentState extends State<SignupStudent> {
                         });
                       },
                       items: [
-                        DropdownMenuItem<String>(
+                        const DropdownMenuItem<String>(
                           value: 'A',
                           child: Text(
                             'A',
                           ),
                         ),
-                        DropdownMenuItem<String>(
+                        const DropdownMenuItem<String>(
                           value: 'B',
                           child: Text('B'),
                         ),
-                        DropdownMenuItem<String>(
+                        const DropdownMenuItem<String>(
                           value: 'C',
                           child: Text('C'),
                         ),
-                        DropdownMenuItem<String>(
+                        const DropdownMenuItem<String>(
                           value: 'D',
                           child: Text('D'),
                         ),
                       ],
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
-                  Text(
+                  const Text(
                     'Choose Semester',
                     style: TextStyle(fontSize: 25, fontWeight: FontWeight.w400),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 7,
                   ),
                   Container(
@@ -447,7 +447,7 @@ class _SignupStudentState extends State<SignupStudent> {
                         color: Colors.black,
                       ),
                       alignment: Alignment.center,
-                      buttonStyleData: ButtonStyleData(width: 200),
+                      buttonStyleData: const ButtonStyleData(width: 200),
                       value: choosesemester,
                       // icon: Icon(Icons.arrow_drop_down),
                       // iconSize: 24,
@@ -456,7 +456,7 @@ class _SignupStudentState extends State<SignupStudent> {
                       //   color: Colors.grey,
                       // ),
                       style: GoogleFonts.montserrat(
-                        textStyle: TextStyle(
+                        textStyle: const TextStyle(
                           color: Colors.grey,
                           fontSize: 15,
                           fontWeight: FontWeight.w600,
@@ -470,39 +470,39 @@ class _SignupStudentState extends State<SignupStudent> {
                         });
                       },
                       items: [
-                        DropdownMenuItem<String>(
+                        const DropdownMenuItem<String>(
                           value: '1st',
                           child: Text(
                             '1st',
                           ),
                         ),
-                        DropdownMenuItem<String>(
+                        const DropdownMenuItem<String>(
                           value: '2nd',
                           child: Text('2nd'),
                         ),
-                        DropdownMenuItem<String>(
+                        const DropdownMenuItem<String>(
                           value: '3rd',
                           child: Text('3rd'),
                         ),
-                        DropdownMenuItem<String>(
+                        const DropdownMenuItem<String>(
                           value: '4th',
                           child: Text('4th'),
                         ),
                       ],
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   const SizedBox(
                     height: 10,
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(right: 180),
+                  const Padding(
+                    padding: EdgeInsets.only(right: 180),
                     child: Text(
                       "Please Enter Passsword",
                       style: TextStyle(
-                          color: const Color(0xff545454),
+                          color: Color(0xff545454),
                           fontSize: 9,
                           fontWeight: FontWeight.w500,
                           fontFamily: 'poppins'),
@@ -518,22 +518,22 @@ class _SignupStudentState extends State<SignupStudent> {
                       keyboardType: TextInputType.visiblePassword,
                       decoration: InputDecoration(
                         contentPadding:
-                            EdgeInsets.symmetric(vertical: 10, horizontal: 12),
+                            const EdgeInsets.symmetric(vertical: 10, horizontal: 12),
                         hintText: 'Password',
                         hoverColor: const Color(0xffFF5757),
                         fillColor: Colors.white,
                         filled: true,
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(22),
-                          borderSide: BorderSide(
-                              color: const Color(0xffFF5757), width: 2.0),
+                          borderSide: const BorderSide(
+                              color: Color(0xffFF5757), width: 2.0),
                         ),
                       ),
                       controller: _passwordController,
                     ),
                   ),
 
-                  SizedBox(
+                  const SizedBox(
                     height: 30,
                   ),
                   Padding(
@@ -542,25 +542,25 @@ class _SignupStudentState extends State<SignupStudent> {
                       children: [
                         ElevatedButton(
                             style: ElevatedButton.styleFrom(
-                                backgroundColor: Color(0xfff0F5697),
-                                minimumSize: Size.fromHeight(50),
+                                backgroundColor: const Color(0xfff0F5697),
+                                minimumSize: const Size.fromHeight(50),
                                 shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(30))),
                             onPressed: () {
                               _createAccount();
                             },
-                            child: Center(
+                            child: const Center(
                               child: Text('Sign Up',style:TextStyle(color: Colors.white,fontWeight: FontWeight.w500,fontSize: 18,),),
                             )),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Text("Already Have an Account"),
+                            const Text("Already Have an Account"),
                             TextButton(
                                 onPressed: () {
-                                  Get.off(LoginStudent());
+                                  Get.off(const LoginStudent());
                                 },
-                                child: Text('login'))
+                                child: const Text('login'))
                           ],
                         )
                       ],
