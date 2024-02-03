@@ -1,6 +1,7 @@
 import 'package:acadease/app/modules/attendance/views/attendance_view.dart';
 import 'package:acadease/app/modules/attendance/views/choose_class.dart';
 import 'package:acadease/app/modules/home/views/home_view.dart';
+import 'package:acadease/app/modules/leaderboard/views/leaderboard_view.dart';
 import 'package:acadease/app/modules/onboarding/views/onboarding_view.dart';
 import 'package:acadease/app/modules/login/views/login_view.dart';
 import 'package:acadease/app/modules/user_choice/views/user_choice_view.dart';
@@ -16,7 +17,7 @@ void main() {
       debugShowCheckedModeBanner: false,
       title: "Application",
       // initialRoute: AppPages.INITIAL,
-      home: UserChoiceView(),
+      home: LeaderboardView(),
       getPages: AppPages.routes,
       // routes: {
       //   'UserChoiceView' : (context) => UserChoiceView(),
