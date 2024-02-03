@@ -1,3 +1,5 @@
+import 'package:acadease/app/modules/profile_page/views/profile_page_view.dart';
+import 'package:acadease/app/modules/resources/views/resources_view.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -5,7 +7,7 @@ import 'package:get/get.dart';
 import '../controllers/home_controller.dart';
 
 class HomeView extends GetView<HomeController> {
-  const HomeView({Key? key}) : super(key: key);
+   const HomeView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -47,7 +49,8 @@ class HomeView extends GetView<HomeController> {
         backgroundColor: const Color(0xff0F5697),
         centerTitle: true,
       ),
-      body: Padding(
+      body: 
+      Padding(
         padding: const EdgeInsets.only(top: 10, left: 8, right: 8),
         child: Column(
           children: [
@@ -199,8 +202,10 @@ class HomeView extends GetView<HomeController> {
                 ),
               ),
             ),
-            const SizedBox(height: 20,),
-             Container(
+            const SizedBox(
+              height: 20,
+            ),
+            Container(
               height: 61,
               width: 382,
               decoration: BoxDecoration(
@@ -217,31 +222,151 @@ class HomeView extends GetView<HomeController> {
                 ),
               ),
             ),
-            const SizedBox(height: 20,),
+            const SizedBox(
+              height: 20,
+            ),
             Column(
               children: [
                 Row(
                   children: [
-                     Container(
-              height: 110,
-              width: 106,
-              decoration: BoxDecoration(
-                color: const Color(0xff0F5697),
-                borderRadius: BorderRadius.circular(12),
-              ),
-              child: const Column(
-                children: [
-                  Image(image: AssetImage("")),
-                  Text(
-                  'ADS',
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 16,
-                      fontWeight: FontWeight.w500),
+                    Container(
+                      height: 120,
+                      width: 112,
+                      decoration: BoxDecoration(
+                        color: const Color(0xff0F5697),
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      child: const Column(
+                        children: [
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Image(image: AssetImage("assets/Attendance.png")),
+                          Text(
+                            'ATTENDANCE',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 16,
+                                fontWeight: FontWeight.w500),
+                          ),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 20,
+                    ),
+                    Container(
+                      height: 120,
+                      width: 112,
+                      decoration: BoxDecoration(
+                        color: const Color(0xff0F5697),
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      child: const Column(
+                        children: [
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Image(image: AssetImage("assets/Leaderboard.png")),
+                          Text(
+                            'LEADERBOARD',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 16,
+                                fontWeight: FontWeight.w500),
+                          ),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 20,
+                    ),
+                    Container(
+                      height: 120,
+                      width: 112,
+                      decoration: BoxDecoration(
+                        color: const Color(0xff0F5697),
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      child: const Column(
+                        children: [
+                          SizedBox(
+                            height: 24,
+                          ),
+                          Image(image: AssetImage("assets/Bookmark.png")),
+                          Text(
+                            'RESOURCES',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 16,
+                                fontWeight: FontWeight.w500),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
                 ),
-                ],
-              ),
+              ],
             ),
+            const SizedBox(
+              height: 20,
+            ),
+            Column(
+              children: [
+                Row(
+                  children: [
+                    const SizedBox(
+                      width: 60,
+                    ),
+                    Container(
+                      height: 120,
+                      width: 112,
+                      decoration: BoxDecoration(
+                        color: const Color(0xff0F5697),
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      child: const Column(
+                        children: [
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Image(image: AssetImage("assets/Crowd.png")),
+                          Text(
+                            'COMMUNITY',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 16,
+                                fontWeight: FontWeight.w500),
+                          ),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 20,
+                    ),
+                    Container(
+                      height: 120,
+                      width: 112,
+                      decoration: BoxDecoration(
+                        color: const Color(0xff0F5697),
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      child: const Column(
+                        children: [
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Image(image: AssetImage("assets/Todo List.png")),
+                          Text(
+                            'ASSESSMENT',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 16,
+                                fontWeight: FontWeight.w500),
+                          ),
+                        ],
+                      ),
+                    ),
                   ],
                 ),
               ],
@@ -249,6 +374,34 @@ class HomeView extends GetView<HomeController> {
           ],
         ),
       ),
+      
+  bottomNavigationBar:BottomNavigationBar(
+        
+  // type: BottomNavigationBarType.shifting,
+  // selectedFontSize: 10,
+  // selectedIconTheme: const IconThemeData(color: Colors.white),
+  // selectedItemColor: Colors.amberAccent,
+  // selectedLabelStyle: const TextStyle(fontWeight: FontWeight.bold),
+  // unselectedIconTheme: const IconThemeData(
+  //   color: Colors.deepOrangeAccent,
+  // ),
+  // unselectedItemColor: Colors.deepOrangeAccent,
+  backgroundColor: const Color(0xff0F5697),
+    items: const <BottomNavigationBarItem>[
+      BottomNavigationBarItem(
+        icon: Icon(Icons.person,color: Color(0xffffffff),),
+        label: 'Profile',
+      ),
+      BottomNavigationBarItem(
+        icon: Icon(Icons.home,color: Color(0xffffffff),),
+        label: 'Home',
+      ),
+      BottomNavigationBarItem(
+        icon: Icon(Icons.chat,color: Color(0xffffffff),),
+        label: 'Chats',
+      ),
+    ],
+  ),
     );
   }
 }
