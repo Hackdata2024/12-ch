@@ -211,14 +211,9 @@ class HomeView extends GetView<HomeController> {
               decoration: BoxDecoration(
                 color: const Color(0xff0F5697),
                 borderRadius: BorderRadius.circular(6),
-              ),
-              child: const Center(
-                child: Text(
-                  'ADS',
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 16,
-                      fontWeight: FontWeight.w500),
+                image: DecorationImage(
+                  image: AssetImage("assets/hackdata.png"),
+                  
                 ),
               ),
             ),
