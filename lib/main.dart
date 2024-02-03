@@ -6,6 +6,7 @@ import 'package:acadease/app/modules/login/views/login_view.dart';
 import 'package:acadease/app/modules/onboarding/views/onboarding2.dart';
 import 'package:acadease/app/modules/onboarding/views/onboarding3.dart';
 import 'package:acadease/app/modules/onboarding/views/onboarding_view.dart';
+import 'package:acadease/app/modules/profile_page/views/profile_page_view.dart';
 import 'package:acadease/app/modules/user_choice/views/user_choice_view.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
