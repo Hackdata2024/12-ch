@@ -10,6 +10,7 @@ class AssessmentView extends GetView<AssessmentController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xffC7D9EA),
       appBar: AppBar(
         leading: IconButton(
             onPressed: () {},
@@ -41,7 +42,7 @@ class AssessmentView extends GetView<AssessmentController> {
                         'assets/as1.png',
                         scale: 1.2,
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       Text(

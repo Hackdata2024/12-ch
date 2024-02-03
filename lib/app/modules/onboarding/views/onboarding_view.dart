@@ -126,7 +126,7 @@ class OnboardingView extends GetView<OnboardingController> {
               Get.to(UserChoiceView());
             },
             child: Container(
-              width: 400,
+              width: 380,
               height: 50,
               decoration: BoxDecoration(
                 color: const Color(0xff0F5697),

@@ -64,32 +64,32 @@ class SignupView extends GetView<SignupController> {
           child: Stack(
             children: [
               Container(
-                height: 70,
-                width: 150,
-                child: Padding(
-                  padding: const EdgeInsets.only(left: 20, top: 48),
-                  child: Row(
-                    children: [
-                      Text(
-                        'Cod',
-                        style: TextStyle(
-                            color: Color(0xffffffff),
-                            fontSize: 22,
-                            fontFamily: 'Poppins',
-                            fontWeight: FontWeight.bold),
-                      ),
-                      Text(
-                        'Grow',
-                        style: TextStyle(
-                            color: Color(0xffF5DF00),
-                            fontSize: 22,
-                            fontFamily: 'Poppins',
-                            fontWeight: FontWeight.bold),
-                      ),
-                    ],
-                  ),
+              height: 90,
+              width: 200,
+              child: Padding(
+                padding: const EdgeInsets.only(left: 20, top: 48),
+                child: Row(
+                  children: [
+                    Text(
+                      'Acad',
+                      style: TextStyle(
+                          color: Color(0xffffffff),
+                          fontSize: 32,
+                          fontFamily: 'Poppins',
+                          fontWeight: FontWeight.bold),
+                    ),
+                    Text(
+                      'ease',
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 32,
+                          fontFamily: 'Poppins',
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ],
                 ),
               ),
+            ),
               SingleChildScrollView(
                 child: Column(
                   children: [
@@ -103,7 +103,7 @@ class SignupView extends GetView<SignupController> {
                           Text(
                             "Welcome teacher",
                             style: TextStyle(
-                                color: Colors.yellow,
+                                color: Colors.black,
                                 fontSize: 30,
                                 fontWeight: FontWeight.bold,
                                 fontFamily: 'poppins'),
@@ -288,7 +288,7 @@ class SignupView extends GetView<SignupController> {
                                   onPressed: () {
                                     Get.off(LoginView());
                                   },
-                                  child: Text('Login'))
+                                  child: Text("Login",style:TextStyle(color: Colors.black,fontWeight: FontWeight.w500,fontSize: 15,),),),
                             ],
                           )
                         ],

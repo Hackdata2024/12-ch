@@ -1,10 +1,13 @@
 import 'package:acadease/app/modules/assessment/views/assessment_view.dart';
 import 'package:acadease/app/modules/attendance/views/attendance_view.dart';
 import 'package:acadease/app/modules/attendance/views/choose_class.dart';
+import 'package:acadease/app/modules/home/views/home_view.dart';
+import 'package:acadease/app/modules/leaderboard/views/leaderboard_view.dart';
 import 'package:acadease/app/modules/login/views/login_view.dart';
 import 'package:acadease/app/modules/onboarding/views/onboarding2.dart';
 import 'package:acadease/app/modules/onboarding/views/onboarding3.dart';
 import 'package:acadease/app/modules/onboarding/views/onboarding_view.dart';
+import 'package:acadease/app/modules/profile_page/views/profile_page_view.dart';
 import 'package:acadease/app/modules/user_choice/views/user_choice_view.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -21,6 +24,7 @@ Future<void> main() async {
       debugShowCheckedModeBanner: false,
       title: "Application",
       // initialRoute: AppPages.INITIAL,
+      // home: LeaderboardView(),
       home: OnboardingView(),
       getPages: AppPages.routes,
       // routes: {
