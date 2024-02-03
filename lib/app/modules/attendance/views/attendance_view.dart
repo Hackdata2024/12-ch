@@ -1,4 +1,5 @@
 import 'package:acadease/app/modules/attendance/views/manual_attendance.dart';
+import 'package:acadease/models/student_model.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -9,6 +10,7 @@ class AttendanceView extends GetView<AttendanceController> {
   const AttendanceView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
+    List<Student> students = Get.arguments as List<Student>;
     return Scaffold(
         appBar: AppBar(
           backgroundColor: Color(0xfffb0F5697),
@@ -56,7 +58,8 @@ class AttendanceView extends GetView<AttendanceController> {
                 ),
                 InkWell(
                   onTap: () {
-                    Get.to(ManualAttendance());
+                    print(students.isEmpty);
+                    Get.to(ManualAttendance(studentList:students,));
                   },
                   child: Container(
                     decoration: BoxDecoration(
