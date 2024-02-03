@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 
-import 'package:get/get.dart';
+class Onboarding3 extends StatelessWidget {
+  const Onboarding3({super.key});
 
-import '../controllers/onboarding_controller.dart';
-
-class OnboardingView extends GetView<OnboardingController> {
-  const OnboardingView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,10 +52,10 @@ class OnboardingView extends GetView<OnboardingController> {
             ),
           ),
           const SizedBox(
-            height: 30,
+            height: 20,
           ),
 
-          Image.asset('assets/1B.png'),
+          Image.asset('assets/2B.png'),
           const SizedBox(
             height: 20,
           ),
@@ -66,7 +63,7 @@ class OnboardingView extends GetView<OnboardingController> {
             mainAxisAlignment: MainAxisAlignment.center,
                 children: [
             Text(
-              'Check Your ',
+              'Take Your ',
               style: TextStyle(
                   color: Color(0xff0F5697),
                   fontSize: 32,
@@ -74,7 +71,7 @@ class OnboardingView extends GetView<OnboardingController> {
                   fontWeight: FontWeight.bold),
             ),
             Text(
-              'Attendance',
+              'Performance',
               style: TextStyle(
                   color: Color(0xff000000),
                   fontSize: 32,
@@ -83,13 +80,11 @@ class OnboardingView extends GetView<OnboardingController> {
             ),
                 ],
               ),
-          const Text('Integrated attendance system ',
+          const Text('Integrate a user-friendly study material',
               style: TextStyle(fontSize: 20, fontFamily: 'poppins')),
-          const Text('employing both manual input and ',
+          const Text('feature for seamless and convenient',
               style: TextStyle(fontSize: 20, fontFamily: 'poppins')),
-          const Text('AI recognition for efficient and ',
-              style: TextStyle(fontSize: 20, fontFamily: 'poppins')),
-          const Text(' accurate tracking',
+          const Text('educational resources within our app.',
               style: TextStyle(fontSize: 20, fontFamily: 'poppins')),
           const SizedBox(
             height: 50,
@@ -97,20 +92,22 @@ class OnboardingView extends GetView<OnboardingController> {
           const Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+             
               CircleAvatar(
+                radius: 10,
+              ),
+               SizedBox(width: 5,),
+              CircleAvatar(
+                radius: 10,
+              ),
+              
+              SizedBox(width: 5,),
+                CircleAvatar(
                 radius: 10,
                 child: CircleAvatar(
                   backgroundColor: Color(0xff0F5697),
                   radius: 8,
                 ),
-              ),
-              SizedBox(width: 5,),
-              CircleAvatar(
-                radius: 10,
-              ),
-              SizedBox(width: 5,),
-              CircleAvatar(
-                radius: 10,
               ),
             ],
           ),
@@ -130,7 +127,6 @@ class OnboardingView extends GetView<OnboardingController> {
                   style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
-                    // fontFamily: GoogleFonts.poppins().fontFamily,
                     color: Colors.white,
                   ),
                 ),
