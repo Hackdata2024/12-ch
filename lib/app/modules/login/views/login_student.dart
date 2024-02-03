@@ -1,3 +1,4 @@
+import 'package:acadease/app/modules/home/views/home_student.dart';
 import 'package:acadease/app/modules/login/views/login_view.dart';
 import 'package:acadease/app/modules/signup/views/signup_student.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -31,7 +32,7 @@ class _LoginStudentState extends State<LoginStudent> {
         password: passwordController.text.toString(),
       );
       print('Login successful: $result');
-      Get.off(() => HomeView());
+      Get.off(() => StudentHome());
     } catch (e) {
       // Hide loading indicator
       // ...
