@@ -22,7 +22,7 @@ Future<void> main() async {
       debugShowCheckedModeBanner: false,
       title: "Application",
       // initialRoute: AppPages.INITIAL,
-      home: OnboardingView(),
+      home: AssessmentView(),
       getPages: AppPages.routes,
       // routes: {
       //   'UserChoiceView' : (context) => UserChoiceView(),
