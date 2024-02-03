@@ -22,25 +22,25 @@ class SignupStudent extends StatelessWidget {
         body: Stack(
           children: [
             Container(
-              height: 70,
-              width: 150,
+              height: 90,
+              width: 200,
               child: Padding(
                 padding: const EdgeInsets.only(left: 20, top: 48),
                 child: Row(
                   children: [
                     Text(
-                      'Cod',
+                      'Acad',
                       style: TextStyle(
                           color: Color(0xffffffff),
-                          fontSize: 22,
+                          fontSize: 32,
                           fontFamily: 'Poppins',
                           fontWeight: FontWeight.bold),
                     ),
                     Text(
-                      'Grow',
+                      'ease',
                       style: TextStyle(
-                          color: Color(0xffF5DF00),
-                          fontSize: 22,
+                          color: Colors.black,
+                          fontSize: 32,
                           fontFamily: 'Poppins',
                           fontWeight: FontWeight.bold),
                     ),
@@ -61,7 +61,7 @@ class SignupStudent extends StatelessWidget {
                         Text(
                           "Welcome Student",
                           style: TextStyle(
-                              color: Colors.yellow,
+                              color: Colors.black,
                               fontSize: 30,
                               fontWeight: FontWeight.bold,
                               fontFamily: 'poppins'),
@@ -211,22 +211,22 @@ class SignupStudent extends StatelessWidget {
                         ElevatedButton(
                             style: ElevatedButton.styleFrom(
                                 backgroundColor: Color(0xfff0F5697),
-                                minimumSize: Size.fromHeight(40),
+                                minimumSize: Size.fromHeight(50),
                                 shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(30))),
                             onPressed: () {},
                             child: Center(
-                              child: Text('Login'),
+                              child: Text('Sign Up',style:TextStyle(color: Colors.white,fontWeight: FontWeight.w500,fontSize: 18,),),
                             )),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Text("Don't Have an Account "),
+                            Text("Don't Have an Account ?"),
                             TextButton(
                                 onPressed: () {
                                   Get.off(LoginStudent());
                                 },
-                                child: Text('Create Now'))
+                                child: Text("Login",style:TextStyle(color: Colors.black,fontWeight: FontWeight.w500,fontSize: 15,),),),
                           ],
                         )
                       ],

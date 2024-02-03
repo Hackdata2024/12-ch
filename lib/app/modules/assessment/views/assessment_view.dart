@@ -42,7 +42,7 @@ class AssessmentView extends GetView<AssessmentController> {
                         'assets/as1.png',
                         scale: 1.2,
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       Text(
