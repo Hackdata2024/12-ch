@@ -1,13 +1,36 @@
-
-
+import 'package:acadease/app/modules/home/views/home_view.dart';
+import 'package:acadease/app/modules/signup/views/signup_view.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
 import '../controllers/login_controller.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class LoginView extends GetView<LoginController> {
-  const LoginView({Key? key}) : super(key: key);
+  LoginView({Key? key}) : super(key: key);
+  final _formKey = GlobalKey<FormState>();
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
+  final _auth = FirebaseAuth.instance;
+
+  void dispose() {
+    Get.delete<LoginController>();
+    emailController.dispose();
+    passwordController.dispose();
+  }
+
+  void login() {
+    _auth
+        .signInWithEmailAndPassword(
+            email: emailController.text.toString(),
+            password: passwordController.text.toString())
+        .then((value) {
+      // throw Exception('An error occurred');
+      Get.to(() => HomeView());
+    }).onError((error, stackTrace) {});
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -18,30 +41,32 @@ class LoginView extends GetView<LoginController> {
           fit: BoxFit.fill,
         ),
       ),
-      child: Scaffold(
-        backgroundColor: Colors.transparent,
-        body: Stack(
-          children: [
-            Container(
-              height: 70,
-              width: 150,
+      child: Form(
+        key: _formKey,
+        child: Scaffold(
+          backgroundColor: Colors.transparent,
+          body: Stack(
+            children: [
+               Container(
+              height: 90,
+              width: 200,
               child: Padding(
                 padding: const EdgeInsets.only(left: 20, top: 48),
                 child: Row(
                   children: [
                     Text(
-                      'Cod',
+                      'Acad',
                       style: TextStyle(
                           color: Color(0xffffffff),
-                          fontSize: 22,
+                          fontSize: 32,
                           fontFamily: 'Poppins',
                           fontWeight: FontWeight.bold),
                     ),
                     Text(
-                      'Grow',
+                      'ease',
                       style: TextStyle(
-                          color: Color(0xffF5DF00),
-                          fontSize: 22,
+                          color: Colors.black,
+                          fontSize: 32,
                           fontFamily: 'Poppins',
                           fontWeight: FontWeight.bold),
                     ),
@@ -49,125 +74,163 @@ class LoginView extends GetView<LoginController> {
                 ),
               ),
             ),
-            SingleChildScrollView(
-              child: Column(
-                children: [
-                  Container(
-                    padding: const EdgeInsets.only(
-                      top: 180,
-                      left: 10,
-                    ),
-                    child: Column(
-                      children: [
-                        Text(
-                          "Login",
-                          style: TextStyle(
-                              color: Color(0xff000000),
-                              fontSize: 30,
-                              fontWeight: FontWeight.bold,
-                              fontFamily: 'poppins'),
-                        ),
-                        SizedBox(
-                          height: 5,
-                        ),
-                        Text(
-                          "Sign in to Continue",
-                          style: TextStyle(
-                              color: const Color(0xff0066FF),
-                              fontSize: 12,
-                              fontWeight: FontWeight.w500,
-                              fontFamily: 'poppins'),
-                        ),
-                      ],
-                    ),
-                  ),
-                  SizedBox(
-                    height: 80,
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(right: 200),
-                    child: Text(
-                      "Please Enter Email",
-                      style: TextStyle(
-                          color: const Color(0xff545454),
-                          fontSize: 9,
-                          fontWeight: FontWeight.w500,
-                          fontFamily: 'poppins'),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(
-                      left: 30,
-                      right: 30,
-                    ),
-                    child: TextField(
-                      keyboardType: TextInputType.emailAddress,
-                      decoration: InputDecoration(
-                        contentPadding:
-                            EdgeInsets.symmetric(vertical: 10, horizontal: 12),
-                        hintText: 'Email',
-                        hoverColor: const Color(0xffFF5757),
-                        fillColor: Colors.white,
-                        filled: true,
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(22),
-                          borderSide: BorderSide(
-                              color: const Color(0xffFF5757), width: 2.0),
-                        ),
+              SingleChildScrollView(
+                child: Column(
+                  children: [
+                    Container(
+                      padding: const EdgeInsets.only(
+                        top: 180,
+                        left: 10,
                       ),
-                      controller: TextEditingController(),
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(right: 180),
-                    child: Text(
-                      "Please Enter Passsword",
-                      style: TextStyle(
-                          color: const Color(0xff545454),
-                          fontSize: 9,
-                          fontWeight: FontWeight.w500,
-                          fontFamily: 'poppins'),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(
-                      left: 30,
-                      right: 30,
-                    ),
-                    child: TextField(
-                      obscureText: true,
-                      keyboardType: TextInputType.visiblePassword,
-                      decoration: InputDecoration(
-                        contentPadding:
-                            EdgeInsets.symmetric(vertical: 10, horizontal: 12),
-                        hintText: 'Password',
-                        hoverColor: const Color(0xffFF5757),
-                        fillColor: Colors.white,
-                        filled: true,
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(22),
-                          borderSide: BorderSide(
-                              color: const Color(0xffFF5757), width: 2.0),
-                        ),
+                      child: Column(
+                        children: [
+                          Text(
+                            "Login",
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 30,
+                                fontWeight: FontWeight.bold,
+                                fontFamily: 'poppins'),
+                          ),
+                          SizedBox(
+                            height: 5,
+                          ),
+                          Text(
+                            "Sign in to Continue",
+                            style: TextStyle(
+                                color: const Color(0xff0066FF),
+                                fontSize: 12,
+                                fontWeight: FontWeight.w500,
+                                fontFamily: 'poppins'),
+                          ),
+                        ],
                       ),
-                      controller: TextEditingController(),
                     ),
-                  ),
-                  // Padding(
-                  //   padding: const EdgeInsets.only(left: 10, top: 40),
-                  //   child: CustomButton(
-                  //       title: 'LOGIN',
-                  //       onTap: () {
-                  //         Get.to(OnboardingView());
-                  //       }),
-                  // )
-                ],
+                    SizedBox(
+                      height: 80,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(right: 200),
+                      child: Text(
+                        "Please Enter Email",
+                        style: TextStyle(
+                            color: const Color(0xff545454),
+                            fontSize: 9,
+                            fontWeight: FontWeight.w500,
+                            fontFamily: 'poppins'),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(
+                        left: 30,
+                        right: 30,
+                      ),
+                      child: TextField(
+                        keyboardType: TextInputType.emailAddress,
+                        decoration: InputDecoration(
+                          contentPadding: EdgeInsets.symmetric(
+                              vertical: 10, horizontal: 12),
+                          hintText: 'Email',
+                          hoverColor: const Color(0xffFF5757),
+                          fillColor: Colors.white,
+                          filled: true,
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(22),
+                            borderSide: BorderSide(
+                                color: const Color(0xffFF5757), width: 2.0),
+                          ),
+                        ),
+                        controller: TextEditingController(),
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(right: 180),
+                      child: Text(
+                        "Please Enter Passsword",
+                        style: TextStyle(
+                            color: const Color(0xff545454),
+                            fontSize: 9,
+                            fontWeight: FontWeight.w500,
+                            fontFamily: 'poppins'),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(
+                        left: 30,
+                        right: 30,
+                      ),
+                      child: TextField(
+                        obscureText: true,
+                        keyboardType: TextInputType.visiblePassword,
+                        decoration: InputDecoration(
+                          contentPadding: EdgeInsets.symmetric(
+                              vertical: 10, horizontal: 12),
+                          hintText: 'Password',
+                          hoverColor: const Color(0xffFF5757),
+                          fillColor: Colors.white,
+                          filled: true,
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(22),
+                            borderSide: BorderSide(
+                                color: const Color(0xffFF5757), width: 2.0),
+                          ),
+                        ),
+                        controller: TextEditingController(),
+                      ),
+                    ),
+                    // Padding(
+                    //   padding: const EdgeInsets.only(left: 10, top: 40),
+                    //   child: CustomButton(
+                    //       title: 'LOGIN',
+                    //       onTap: () {
+                    //         Get.to(OnboardingView());
+                    //       }),
+                    // )
+                    SizedBox(
+                      height: 30,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 30, right: 30),
+                      child: Column(
+                        children: [
+                          ElevatedButton(
+                              style: ElevatedButton.styleFrom(
+                                  backgroundColor: Color(0xfff0F5697),
+                                  minimumSize: Size.fromHeight(40),
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(30))),
+                              onPressed: () {
+                                Get.off(HomeView());
+                              },
+                              child: Center(
+                                child: Text('Login',style:TextStyle(color: Colors.white,fontWeight: FontWeight.w500,fontSize: 18,),
+                              ),
+                              ),
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text("Don't Have an Account "),
+                              TextButton(
+                                  onPressed: () {
+                                    if (_formKey.currentState!.validate()) {
+                                      login();
+                                    }
+                                  },
+                                  child: Text("Create Now",style:TextStyle(color: Colors.black,fontWeight: FontWeight.w500,fontSize: 15,),),),
+                            ],
+                          )
+                        ],
+                      ),
+                    )
+                  ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

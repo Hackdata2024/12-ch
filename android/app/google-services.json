@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "65163770667",
+    "project_id": "acadease-57cdf",
+    "storage_bucket": "acadease-57cdf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:65163770667:android:f46109438f45b09466a36e",
+        "android_client_info": {
+          "package_name": "com.example.acadease"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC6OtKq_l3H3OVIg_z3LC9WSaZ8R8JKOS0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
