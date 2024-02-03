@@ -59,33 +59,33 @@ class LoginView extends GetView<LoginController> {
           backgroundColor: Colors.transparent,
           body: Stack(
             children: [
-               Container(
-              height: 90,
-              width: 200,
-              child: Padding(
-                padding: const EdgeInsets.only(left: 20, top: 48),
-                child: Row(
-                  children: [
-                    Text(
-                      'Acad',
-                      style: TextStyle(
-                          color: Color(0xffffffff),
-                          fontSize: 32,
-                          fontFamily: 'Poppins',
-                          fontWeight: FontWeight.bold),
-                    ),
-                    Text(
-                      'ease',
-                      style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 32,
-                          fontFamily: 'Poppins',
-                          fontWeight: FontWeight.bold),
-                    ),
-                  ],
+              Container(
+                height: 90,
+                width: 200,
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 20, top: 48),
+                  child: Row(
+                    children: [
+                      Text(
+                        'Acad',
+                        style: TextStyle(
+                            color: Color(0xffffffff),
+                            fontSize: 32,
+                            fontFamily: 'Poppins',
+                            fontWeight: FontWeight.bold),
+                      ),
+                      Text(
+                        'ease',
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 32,
+                            fontFamily: 'Poppins',
+                            fontWeight: FontWeight.bold),
+                      ),
+                    ],
+                  ),
                 ),
               ),
-            ),
               SingleChildScrollView(
                 child: Column(
                   children: [
@@ -209,35 +209,49 @@ class LoginView extends GetView<LoginController> {
                       child: Column(
                         children: [
                           ElevatedButton(
-                              style: ElevatedButton.styleFrom(
-                                  backgroundColor: Color(0xfff0F5697),
-                                  minimumSize: Size.fromHeight(40),
-                                  shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(30))),
-                              onPressed: () {
-                                // Get.off(HomeView());
-                                print('Going to login');
-                                // login();
-                                if (_formKey.currentState!.validate()) {
-                                  print(emailController.text.toString());
-                                  print(passwordController.text.toString());
-                                  login();
-                                }
-                              },
-                              child: Center(
-                                child: Text('Login',style:TextStyle(color: Colors.white,fontWeight: FontWeight.w500,fontSize: 18,),
+                            style: ElevatedButton.styleFrom(
+                                backgroundColor: Color(0xfff0F5697),
+                                minimumSize: Size.fromHeight(40),
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(30))),
+                            onPressed: () {
+                              // Get.off(HomeView());
+                              print('Going to login');
+                              login();
+                              if (_formKey.currentState!.validate()) {
+                                print(emailController.text.toString());
+                                print(passwordController.text.toString());
+                                login();
+                              }
+                            },
+                            child: Center(
+                              child: Text(
+                                'Login',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 18,
+                                ),
                               ),
-                              ),
+                            ),
                           ),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text("Don't Have an Account "),
                               TextButton(
-                                  onPressed: () {
-                                    Get.off(SignupView());
-                                  },
-                                  child: Text("Create Now",style:TextStyle(color: Colors.black,fontWeight: FontWeight.w500,fontSize: 15,),),),
+                                onPressed: () {
+                                  Get.off(SignupView());
+                                },
+                                child: Text(
+                                  "Create Now",
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 15,
+                                  ),
+                                ),
+                              ),
                             ],
                           )
                         ],

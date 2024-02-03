@@ -47,14 +47,18 @@ class _SignupStudentState extends State<SignupStudent> {
       // If account creation is successful, store student details in Firestore
       await _firestore
           .collection('students')
-          .doc(userCredential.user!.uid)
+          .doc(_enrollmentController.text.toString())
           .set({
         'name': _nameController.text,
+        'uid':userCredential.user!.uid,
+        
         'email': _emailController.text,
         'student_course': choosecourse,
         'student_section': choosesection,
         'student_semester': choosesemester,
-        'student_enrollment': _enrollmentController.text
+        'student_enrollment': _enrollmentController.text,
+        'days_present':0,
+        'days_absent':0
         // Add other student details as needed
       });
 
