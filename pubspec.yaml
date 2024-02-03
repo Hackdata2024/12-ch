@@ -12,6 +12,8 @@ dependencies:
   google_fonts: ^6.1.0
   flutter: 
     sdk: flutter
+  flutter_bounce: ^1.1.0
+  flutter_screenutil: ^5.9.0
     
   
 
