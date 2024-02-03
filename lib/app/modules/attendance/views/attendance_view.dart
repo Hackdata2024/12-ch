@@ -59,7 +59,9 @@ class AttendanceView extends GetView<AttendanceController> {
                 InkWell(
                   onTap: () {
                     print(students.isEmpty);
-                    Get.to(ManualAttendance(studentList:students,));
+                    Get.off(ManualAttendance(
+                      studentList: students,
+                    ));
                   },
                   child: Container(
                     decoration: BoxDecoration(

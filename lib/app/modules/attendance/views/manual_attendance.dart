@@ -1,3 +1,4 @@
+import 'package:acadease/app/modules/attendance/views/attendance_complete.dart';
 import 'package:flutter/material.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:get/get.dart';
@@ -62,7 +63,10 @@ class _ManualAttendanceState extends State<ManualAttendance> {
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: FloatingActionButton.extended(
-          onPressed: () {}, label: Text('Submit')),
+          onPressed: () {
+            Get.off(AttendanceComplete());
+          },
+          label: Text('Submit')),
     );
   }
 }

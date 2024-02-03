@@ -1,4 +1,5 @@
 import 'package:acadease/app/modules/attendance/views/choose_class.dart';
+import 'package:acadease/app/modules/login/views/login_view.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -11,7 +12,7 @@ void main() {
       debugShowCheckedModeBanner: false,
       title: "Application",
       // initialRoute: AppPages.INITIAL,
-      home: ChooseClass(),
+      home: LoginView(),
       getPages: AppPages.routes,
     ),
   );
