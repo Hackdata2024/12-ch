@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 
-import 'package:get/get.dart';
+class Onboarding2 extends StatelessWidget {
+  const Onboarding2({super.key});
 
-import '../controllers/onboarding_controller.dart';
-
-class OnboardingView extends GetView<OnboardingController> {
-  const OnboardingView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -58,7 +55,7 @@ class OnboardingView extends GetView<OnboardingController> {
             height: 30,
           ),
 
-          Image.asset('assets/1B.png'),
+          Image.asset('assets/3B.png'),
           const SizedBox(
             height: 20,
           ),
@@ -66,7 +63,7 @@ class OnboardingView extends GetView<OnboardingController> {
             mainAxisAlignment: MainAxisAlignment.center,
                 children: [
             Text(
-              'Check Your ',
+              'Take Your ',
               style: TextStyle(
                   color: Color(0xff0F5697),
                   fontSize: 32,
@@ -74,7 +71,7 @@ class OnboardingView extends GetView<OnboardingController> {
                   fontWeight: FontWeight.bold),
             ),
             Text(
-              'Attendance',
+              'Performance',
               style: TextStyle(
                   color: Color(0xff000000),
                   fontSize: 32,
@@ -83,13 +80,11 @@ class OnboardingView extends GetView<OnboardingController> {
             ),
                 ],
               ),
-          const Text('Integrated attendance system ',
+          const Text('Implementing a robust performance',
               style: TextStyle(fontSize: 20, fontFamily: 'poppins')),
-          const Text('employing both manual input and ',
+          const Text('tracking feature to monitor and',
               style: TextStyle(fontSize: 20, fontFamily: 'poppins')),
-          const Text('AI recognition for efficient and ',
-              style: TextStyle(fontSize: 20, fontFamily: 'poppins')),
-          const Text(' accurate tracking',
+          const Text('analyze system efficiency.',
               style: TextStyle(fontSize: 20, fontFamily: 'poppins')),
           const SizedBox(
             height: 50,
@@ -97,16 +92,17 @@ class OnboardingView extends GetView<OnboardingController> {
           const Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+             
+              CircleAvatar(
+                radius: 10,
+              ),
+               SizedBox(width: 5,),
               CircleAvatar(
                 radius: 10,
                 child: CircleAvatar(
                   backgroundColor: Color(0xff0F5697),
                   radius: 8,
                 ),
-              ),
-              SizedBox(width: 5,),
-              CircleAvatar(
-                radius: 10,
               ),
               SizedBox(width: 5,),
               CircleAvatar(
@@ -130,7 +126,6 @@ class OnboardingView extends GetView<OnboardingController> {
                   style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
-                    // fontFamily: GoogleFonts.poppins().fontFamily,
                     color: Colors.white,
                   ),
                 ),
@@ -138,6 +133,6 @@ class OnboardingView extends GetView<OnboardingController> {
             ),
         ],
       ),
-    );
+    );;
   }
 }
