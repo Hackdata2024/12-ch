@@ -1,6 +1,7 @@
 import 'package:acadease/app/modules/attendance/views/attendance_view.dart';
 import 'package:acadease/app/modules/attendance/views/manual_attendance.dart';
 import 'package:acadease/models/student_model.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -20,10 +21,55 @@ class _ChooseClassState extends State<ChooseClass> {
   String choosesection = 'A';
   String choosesemester = '1st';
   List<Student> filteredStudents = [];
+  final FirebaseFirestore _firestore = FirebaseFirestore.instance;
+  List<Map<String, dynamic>> studentsList = [];
+  // List<Map<String, dynamic>> filteredStudents = [];
+
+  Future<void> _fetchStudents() async {
+    try {
+      QuerySnapshot<Map<String, dynamic>> snapshot =
+          await _firestore.collection('students').get();
+
+      // Clear the previous list
+      studentsList.clear();
+      filteredStudents.clear();
+
+      // Add each student data to the list
+      for (QueryDocumentSnapshot<Map<String, dynamic>> doc in snapshot.docs) {
+        studentsList.add(doc.data());
+        for (var student in studentsList) {
+          if (student['student_course'] == choosecourse &&
+              student['student_section'] == choosesection &&
+              student['student_semester'] == choosesemester) {
+            print('working ');
+            print(student['name']);
+            // filteredStudents.add(student);
+            filteredStudents.add(Student(
+              name: student['name'],
+              course: student['student_course'],
+              section: student['student_section'],
+              semester: student['student_semester'],
+              roll_no: student['student_enrollment'],
+              isPresent: false,
+              present_days: student['days_present'],
+              absent_days: student['days_absent'],
+            ));
+          }
+        }
+        print(studentsList.length);
+      }
+      Get.to(AttendanceView(), arguments: filteredStudents);
+    } catch (e) {
+      // Handle any errors that may occur during the process
+      print('Error fetching students: $e');
+    }
+  }
+
   @override
-  void init() {
+  void onInit() {
     super.initState();
     filteredStudents.clear();
+    _fetchStudents();
   }
 
   Widget build(BuildContext context) {
@@ -239,15 +285,18 @@ class _ChooseClassState extends State<ChooseClass> {
                     backgroundColor: Color(0xfffb0F5697)),
                 onPressed: () {
                   setState(() {});
-                  for (var student in students_list) {
-                    if (student.course == choosecourse &&
-                        student.section == choosesection &&
-                        student.semester == choosesemester) {
-                      print(student.name);
-                      filteredStudents.add(student);
-                    }
-                  }
-                  Get.to(AttendanceView(), arguments: filteredStudents);
+
+                  // for (var student in studentsList) {
+                  //   if (student['course'] == choosecourse &&
+                  //       student['section'] == choosesection &&
+                  //       student['semester'] == choosesemester) {
+                  //     print('working ');
+                  //     print(student['name']);
+                  //     filteredStudents.add(student);
+                  //   }
+                  // }
+                  _fetchStudents();
+                  // Get.to(AttendanceView(), arguments: filteredStudents);
                   // Get.to(ManualAttendance(student_list: filteredStudents));
                 },
                 child: Center(
