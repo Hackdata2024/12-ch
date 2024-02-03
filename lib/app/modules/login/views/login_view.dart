@@ -14,21 +14,33 @@ class LoginView extends GetView<LoginController> {
   final passwordController = TextEditingController();
   final _auth = FirebaseAuth.instance;
 
-  void dispose() {
-    Get.delete<LoginController>();
-    emailController.dispose();
-    passwordController.dispose();
+  void login() async {
+    try {
+      // Show loading indicator
+      // ...
+
+      var result = await _auth.signInWithEmailAndPassword(
+        email: emailController.text.toString(),
+        password: passwordController.text.toString(),
+      );
+      print('Login successful: $result');
+      Get.off(() => HomeView());
+    } catch (e) {
+      // Hide loading indicator
+      // ...
+
+      if (e is FirebaseAuthException) {
+        print('Firebase Authentication Error: ${e.message}');
+      } else {
+        print('Unexpected Error: $e');
+      }
+    }
   }
 
-  void login() {
-    _auth
-        .signInWithEmailAndPassword(
-            email: emailController.text.toString(),
-            password: passwordController.text.toString())
-        .then((value) {
-      // throw Exception('An error occurred');
-      Get.to(() => HomeView());
-    }).onError((error, stackTrace) {});
+  void dispose() {
+    Get.delete<LoginController>();
+    if (emailController != null) emailController.dispose();
+    if (passwordController != null) passwordController.dispose();
   }
 
   @override
@@ -140,7 +152,7 @@ class LoginView extends GetView<LoginController> {
                                 color: const Color(0xffFF5757), width: 2.0),
                           ),
                         ),
-                        controller: TextEditingController(),
+                        controller: emailController,
                       ),
                     ),
                     const SizedBox(
@@ -178,7 +190,7 @@ class LoginView extends GetView<LoginController> {
                                 color: const Color(0xffFF5757), width: 2.0),
                           ),
                         ),
-                        controller: TextEditingController(),
+                        controller: passwordController,
                       ),
                     ),
                     // Padding(
@@ -203,7 +215,14 @@ class LoginView extends GetView<LoginController> {
                                   shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(30))),
                               onPressed: () {
-                                Get.off(HomeView());
+                                // Get.off(HomeView());
+                                print('Going to login');
+                                // login();
+                                if (_formKey.currentState!.validate()) {
+                                  print(emailController.text.toString());
+                                  print(passwordController.text.toString());
+                                  login();
+                                }
                               },
                               child: Center(
                                 child: Text('Login'),
@@ -214,9 +233,7 @@ class LoginView extends GetView<LoginController> {
                               Text("Don't Have an Account "),
                               TextButton(
                                   onPressed: () {
-                                    if (_formKey.currentState!.validate()) {
-                                      login();
-                                    }
+                                    Get.off(SignupView());
                                   },
                                   child: Text('Create Now'))
                             ],
