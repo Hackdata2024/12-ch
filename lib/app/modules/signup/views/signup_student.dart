@@ -1,12 +1,10 @@
-import 'package:acadease/app/modules/signup/views/signup_view.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
-import 'package:get/get.dart';
+class SignupStudent extends StatelessWidget {
+  const SignupStudent({super.key});
 
-import '../controllers/login_controller.dart';
-
-class LoginView extends GetView<LoginController> {
-  const LoginView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -59,7 +57,7 @@ class LoginView extends GetView<LoginController> {
                     child: Column(
                       children: [
                         Text(
-                          "Login",
+                          "Create Your Account",
                           style: TextStyle(
                               color: Colors.yellow,
                               fontSize: 30,
@@ -155,6 +153,44 @@ class LoginView extends GetView<LoginController> {
                       controller: TextEditingController(),
                     ),
                   ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(right: 180),
+                    child: Text(
+                      "Please Confirm Your Passsword",
+                      style: TextStyle(
+                          color: const Color(0xff545454),
+                          fontSize: 9,
+                          fontWeight: FontWeight.w500,
+                          fontFamily: 'poppins'),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(
+                      left: 30,
+                      right: 30,
+                    ),
+                    child: TextField(
+                      obscureText: true,
+                      keyboardType: TextInputType.visiblePassword,
+                      decoration: InputDecoration(
+                        contentPadding:
+                            EdgeInsets.symmetric(vertical: 10, horizontal: 12),
+                        hintText: 'Confirm Your Password',
+                        hoverColor: const Color(0xffFF5757),
+                        fillColor: Colors.white,
+                        filled: true,
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(22),
+                          borderSide: BorderSide(
+                              color: const Color(0xffFF5757), width: 2.0),
+                        ),
+                      ),
+                      controller: TextEditingController(),
+                    ),
+                  ),
                   // Padding(
                   //   padding: const EdgeInsets.only(left: 10, top: 40),
                   //   child: CustomButton(
@@ -184,11 +220,11 @@ class LoginView extends GetView<LoginController> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text("Don't Have an Account "),
-                            TextButton(
-                                onPressed: () {
-                                  Get.off(SignupView());
-                                },
-                                child: Text('Create Now'))
+                            // TextButton(
+                            //     onPressed: () {
+                            //       Get.off(SignupView());
+                            //     },
+                            //     child: Text('Create Now'))
                           ],
                         )
                       ],
