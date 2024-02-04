@@ -1,3 +1,4 @@
+
 import 'package:acadease/app/modules/home/views/home_view.dart';
 import 'package:acadease/app/modules/profile_page/views/profile_page_view.dart';
 import 'package:acadease/chats.dart';

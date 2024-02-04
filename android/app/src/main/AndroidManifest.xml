@@ -1,4 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+     package="com.example.ml_kit_face_dtector">
     <application
         android:label="Acadease"
         android:name="${applicationName}"
