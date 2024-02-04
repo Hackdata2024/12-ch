@@ -42,7 +42,7 @@ class ResourcesViewstudent extends GetView<ResourcesController> {
                       height: 20,
                       width: 80,
                        decoration: BoxDecoration(borderRadius: BorderRadius.circular(12),color: Colors.white),
-                      //  child: --> Drop Down Menu
+                       child: Text('Semester'),
                     ),
                   ),Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 10),
@@ -51,7 +51,7 @@ class ResourcesViewstudent extends GetView<ResourcesController> {
                       height: 20,
                       width: 80,
                        decoration: BoxDecoration(borderRadius: BorderRadius.circular(12),color: Colors.white),
-                      //  child: --> Drop Down Menu
+                      child: Text('Section',style: TextStyle(color:Colors.blue.shade900),),
                     ),
                   )
                 ],

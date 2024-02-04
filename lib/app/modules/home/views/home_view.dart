@@ -13,6 +13,7 @@ import '../controllers/home_controller.dart';
 
 class HomeView extends GetView<HomeController> {
   const HomeView({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,18 +30,20 @@ class HomeView extends GetView<HomeController> {
             Text(
               'Acad',
               style: TextStyle(
-                  color: Color(0xffC7D9EA),
-                  fontSize: 32,
-                  fontFamily: 'Poppins',
-                  fontWeight: FontWeight.bold),
+                color: Color(0xffC7D9EA),
+                fontSize: 32,
+                fontFamily: 'Poppins',
+                fontWeight: FontWeight.bold,
+              ),
             ),
             Text(
               'ease',
               style: TextStyle(
-                  color: Color(0xff000000),
-                  fontSize: 32,
-                  fontFamily: 'Poppins',
-                  fontWeight: FontWeight.bold),
+                color: Color(0xff000000),
+                fontSize: 32,
+                fontFamily: 'Poppins',
+                fontWeight: FontWeight.bold,
+              ),
             ),
             SizedBox(
               width: 80,
@@ -69,14 +72,15 @@ class HomeView extends GetView<HomeController> {
                 child: Text(
                   'Important Notice',
                   style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 16,
-                      fontWeight: FontWeight.w500),
+                    color: Colors.white,
+                    fontSize: 16,
+                    fontWeight: FontWeight.w500,
+                  ),
                 ),
               ),
             ),
             const SizedBox(
-              height: 20,
+              height: 5,
             ),
             Container(
               height: 239,
@@ -86,8 +90,10 @@ class HomeView extends GetView<HomeController> {
                 borderRadius: BorderRadius.circular(6),
               ),
               child: Padding(
-                padding:
-                    const EdgeInsets.symmetric(vertical: 15.0, horizontal: 10),
+                padding: const EdgeInsets.symmetric(
+                  vertical: 15.0,
+                  horizontal: 10,
+                ),
                 child: Row(
                   children: [
                     Container(
@@ -105,16 +111,18 @@ class HomeView extends GetView<HomeController> {
                           Text(
                             '4',
                             style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 45,
-                                fontWeight: FontWeight.w500),
+                              color: Colors.white,
+                              fontSize: 45,
+                              fontWeight: FontWeight.w500,
+                            ),
                           ),
                           Text(
                             'Feb',
                             style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 45,
-                                fontWeight: FontWeight.w500),
+                              color: Colors.white,
+                              fontSize: 45,
+                              fontWeight: FontWeight.w500,
+                            ),
                           ),
                         ],
                       ),
@@ -138,9 +146,10 @@ class HomeView extends GetView<HomeController> {
                             child: Text(
                               '',
                               style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w500),
+                                color: Colors.white,
+                                fontSize: 16,
+                                fontWeight: FontWeight.w500,
+                              ),
                             ),
                           ),
                         ),
@@ -158,9 +167,10 @@ class HomeView extends GetView<HomeController> {
                             child: Text(
                               '',
                               style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w500),
+                                color: Colors.white,
+                                fontSize: 16,
+                                fontWeight: FontWeight.w500,
+                              ),
                             ),
                           ),
                         ),
@@ -178,9 +188,10 @@ class HomeView extends GetView<HomeController> {
                             child: Text(
                               '',
                               style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w500),
+                                color: Colors.white,
+                                fontSize: 16,
+                                fontWeight: FontWeight.w500,
+                              ),
                             ),
                           ),
                         ),
@@ -198,9 +209,10 @@ class HomeView extends GetView<HomeController> {
                             child: Text(
                               '',
                               style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w500),
+                                color: Colors.white,
+                                fontSize: 16,
+                                fontWeight: FontWeight.w500,
+                              ),
                             ),
                           ),
                         ),
@@ -211,19 +223,37 @@ class HomeView extends GetView<HomeController> {
               ),
             ),
             const SizedBox(
-              height: 20,
+              height: 10,
             ),
             Container(
-              height: 61,
-              width: 382,
+              height: 50,
+              width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(
                 color: const Color(0xff0F5697),
                 borderRadius: BorderRadius.circular(6),
-                image: DecorationImage(
-                  image: AssetImage("assets/hackdata.png"),
-                ),
               ),
-              // child: Text("HACKDATA",style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: Font),),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Text(
+                    "Hack",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 30,
+                    ),
+                  ),
+                  Image.asset('assets/hackdata.png'),
+                  Text(
+                    "Data",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 30,
+                    ),
+                  ),
+                ],
+              ),
             ),
             const SizedBox(
               height: 20,
@@ -236,32 +266,28 @@ class HomeView extends GetView<HomeController> {
                       onTap: () {
                         Get.to(ChooseClass());
                       },
-                      child: InkWell(
-                        onTap: () {
-                          Get.to(AttendanceView());
-                        },
-                        child: Container(
-                          height: 120,
-                          width: 112,
-                          decoration: BoxDecoration(
-                            color: const Color(0xff0F5697),
-                            borderRadius: BorderRadius.circular(12),
-                          ),
-                          child: const Column(
-                            children: [
-                              SizedBox(
-                                height: 10,
+                      child: Container(
+                        height: 120,
+                        width: 112,
+                        decoration: BoxDecoration(
+                          color: const Color(0xff0F5697),
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        child: const Column(
+                          children: [
+                            SizedBox(
+                              height: 10,
+                            ),
+                            Image(image: AssetImage("assets/Attendance.png")),
+                            Text(
+                              'ATTENDANCE',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 15,
+                                fontWeight: FontWeight.w500,
                               ),
-                              Image(image: AssetImage("assets/Attendance.png")),
-                              Text(
-                                'ATTENDANCE',
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.w500),
-                              ),
-                            ],
-                          ),
+                            ),
+                          ],
                         ),
                       ),
                     ),
@@ -288,9 +314,10 @@ class HomeView extends GetView<HomeController> {
                             Text(
                               'LEADERBOARD',
                               style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.w500),
+                                color: Colors.white,
+                                fontSize: 15,
+                                fontWeight: FontWeight.w500,
+                              ),
                             ),
                           ],
                         ),
@@ -319,9 +346,10 @@ class HomeView extends GetView<HomeController> {
                             Text(
                               'RESOURCES',
                               style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.w500),
+                                color: Colors.white,
+                                fontSize: 15,
+                                fontWeight: FontWeight.w500,
+                              ),
                             ),
                           ],
                         ),
@@ -361,9 +389,10 @@ class HomeView extends GetView<HomeController> {
                             Text(
                               'COMMUNITY',
                               style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.w500),
+                                color: Colors.white,
+                                fontSize: 15,
+                                fontWeight: FontWeight.w500,
+                              ),
                             ),
                           ],
                         ),
@@ -392,9 +421,10 @@ class HomeView extends GetView<HomeController> {
                             Text(
                               'ASSESSMENT',
                               style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.w500),
+                                color: Colors.white,
+                                fontSize: 15,
+                                fontWeight: FontWeight.w500,
+                              ),
                             ),
                           ],
                         ),
@@ -407,7 +437,6 @@ class HomeView extends GetView<HomeController> {
           ],
         ),
       ),
-      
     );
   }
 }

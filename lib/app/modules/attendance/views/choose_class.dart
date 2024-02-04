@@ -75,236 +75,240 @@ class _ChooseClassState extends State<ChooseClass> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-          child: Column(
-        children: [
-          Image.asset('assets/attendace.jpg'),
-          Text(
-            'Choose Your Class',
-            style: TextStyle(fontSize: 25, fontWeight: FontWeight.w400),
-          ),
-          SizedBox(
-            height: 7,
-          ),
-          Container(
-            height: 45,
-            decoration: BoxDecoration(
-              border: Border.all(color: Colors.grey), // Set border color
-              borderRadius:
-                  BorderRadius.circular(6.0), // Set border radius if desired
+          child: SingleChildScrollView(
+            child: Column(
+                    children: [
+            Image.asset('assets/attendace.jpg'),
+            Text(
+              'Choose Your Class',
+              style: TextStyle(fontSize: 25, fontWeight: FontWeight.w400),
             ),
-            child: DropdownButton2<String>(
-              // padding: EdgeInsets.only(left: 10),
-              underline: Container(
-                color: Colors.black,
+            SizedBox(
+              height: 7,
+            ),
+            Container(
+              height: 45,
+              decoration: BoxDecoration(
+                border: Border.all(color: Colors.grey), // Set border color
+                borderRadius:
+                    BorderRadius.circular(6.0), // Set border radius if desired
               ),
-              alignment: Alignment.center,
-              value: choosecourse,
-              // icon: Icon(Icons.arrow_drop_down),
-              // iconSize: 24,
-              // elevation: 16,
-              // style: TextStyle(
-              //   color: Colors.grey,
-              // ),
-              style: GoogleFonts.montserrat(
-                textStyle: TextStyle(
-                  color: Colors.grey,
-                  fontSize: 15,
-                  fontWeight: FontWeight.w600,
-                  // You can set other text style properties here
+              child: DropdownButton2<String>(
+                // padding: EdgeInsets.only(left: 10),
+                underline: Container(
+                  color: Colors.black,
                 ),
-              ),
-              // underline: Container(color: backgroundColor),
-              onChanged: (newValue) {
-                setState(() {
-                  choosecourse = newValue!;
-                });
-              },
-              items: [
-                DropdownMenuItem<String>(
-                  value: 'Computer Science',
-                  child: Text(
-                    'Computer Science',
+                alignment: Alignment.center,
+                value: choosecourse,
+                // icon: Icon(Icons.arrow_drop_down),
+                // iconSize: 24,
+                // elevation: 16,
+                // style: TextStyle(
+                //   color: Colors.grey,
+                // ),
+                style: GoogleFonts.montserrat(
+                  textStyle: TextStyle(
+                    color: Colors.grey,
+                    fontSize: 15,
+                    fontWeight: FontWeight.w600,
+                    // You can set other text style properties here
                   ),
                 ),
-                DropdownMenuItem<String>(
-                  value: 'Electrical Engineering',
-                  child: Text('Electrical Engineering'),
-                ),
-                DropdownMenuItem<String>(
-                  value: 'Mechanical Enginerring',
-                  child: Text('Mechanical Engineering'),
-                ),
-                DropdownMenuItem<String>(
-                  value: 'Civil',
-                  child: Text('Civil'),
-                ),
-              ],
-            ),
-          ),
-          SizedBox(
-            height: 30,
-          ),
-          Text(
-            'Choose Section',
-            style: TextStyle(fontSize: 25, fontWeight: FontWeight.w400),
-          ),
-          SizedBox(
-            height: 7,
-          ),
-          Container(
-            height: 45,
-            decoration: BoxDecoration(
-              border: Border.all(color: Colors.grey), // Set border color
-              borderRadius:
-                  BorderRadius.circular(6.0), // Set border radius if desired
-            ),
-            child: DropdownButton2<String>(
-              // padding: EdgeInsets.only(left: 10),
-              underline: Container(
-                color: Colors.black,
-              ),
-              alignment: Alignment.center,
-              buttonStyleData: ButtonStyleData(width: 200),
-              value: choosesection,
-              // icon: Icon(Icons.arrow_drop_down),
-              // iconSize: 24,
-              // elevation: 16,
-              // style: TextStyle(
-              //   color: Colors.grey,
-              // ),
-              style: GoogleFonts.montserrat(
-                textStyle: TextStyle(
-                  color: Colors.grey,
-                  fontSize: 15,
-                  fontWeight: FontWeight.w600,
-                  // You can set other text style properties here
-                ),
-              ),
-              // underline: Container(color: backgroundColor),
-              onChanged: (newValue) {
-                setState(() {
-                  choosesection = newValue!;
-                });
-              },
-              items: [
-                DropdownMenuItem<String>(
-                  value: 'A',
-                  child: Text(
-                    'A',
-                  ),
-                ),
-                DropdownMenuItem<String>(
-                  value: 'B',
-                  child: Text('B'),
-                ),
-                DropdownMenuItem<String>(
-                  value: 'C',
-                  child: Text('C'),
-                ),
-                DropdownMenuItem<String>(
-                  value: 'D',
-                  child: Text('D'),
-                ),
-              ],
-            ),
-          ),
-          SizedBox(
-            height: 20,
-          ),
-          Text(
-            'Choose Semester',
-            style: TextStyle(fontSize: 25, fontWeight: FontWeight.w400),
-          ),
-          SizedBox(
-            height: 7,
-          ),
-          Container(
-            height: 45,
-            decoration: BoxDecoration(
-              border: Border.all(color: Colors.grey), // Set border color
-              borderRadius:
-                  BorderRadius.circular(6.0), // Set border radius if desired
-            ),
-            child: DropdownButton2<String>(
-              // padding: EdgeInsets.only(left: 10),
-              underline: Container(
-                color: Colors.black,
-              ),
-              alignment: Alignment.center,
-              buttonStyleData: ButtonStyleData(width: 200),
-              value: choosesemester,
-              // icon: Icon(Icons.arrow_drop_down),
-              // iconSize: 24,
-              // elevation: 16,
-              // style: TextStyle(
-              //   color: Colors.grey,
-              // ),
-              style: GoogleFonts.montserrat(
-                textStyle: TextStyle(
-                  color: Colors.grey,
-                  fontSize: 15,
-                  fontWeight: FontWeight.w600,
-                  // You can set other text style properties here
-                ),
-              ),
-              // underline: Container(color: backgroundColor),
-              onChanged: (newValue) {
-                setState(() {
-                  choosesemester = newValue!;
-                });
-              },
-              items: [
-                DropdownMenuItem<String>(
-                  value: '1st',
-                  child: Text(
-                    '1st',
-                  ),
-                ),
-                DropdownMenuItem<String>(
-                  value: '2nd',
-                  child: Text('2nd'),
-                ),
-                DropdownMenuItem<String>(
-                  value: '3rd',
-                  child: Text('3rd'),
-                ),
-                DropdownMenuItem<String>(
-                  value: '4th',
-                  child: Text('4th'),
-                ),
-              ],
-            ),
-          ),
-          SizedBox(
-            height: 20,
-          ),
-          Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                    backgroundColor: Color(0xfffb0F5697)),
-                onPressed: () {
-                  setState(() {});
-
-                  // for (var student in studentsList) {
-                  //   if (student['course'] == choosecourse &&
-                  //       student['section'] == choosesection &&
-                  //       student['semester'] == choosesemester) {
-                  //     print('working ');
-                  //     print(student['name']);
-                  //     filteredStudents.add(student);
-                  //   }
-                  // }
-                  _fetchStudents();
-                  // Get.to(AttendanceView(), arguments: filteredStudents);
-                  // Get.to(ManualAttendance(student_list: filteredStudents));
+                // underline: Container(color: backgroundColor),
+                onChanged: (newValue) {
+                  setState(() {
+                    choosecourse = newValue!;
+                  });
                 },
-                child: Center(
-                  child: Text('Take Attendance'),
-                )),
-          )
-        ],
-      )),
+                items: [
+                  DropdownMenuItem<String>(
+                    value: 'Computer Science',
+                    child: Text(
+                      'Computer Science',
+                    ),
+                  ),
+                  DropdownMenuItem<String>(
+                    value: 'Electrical Engineering',
+                    child: Text('Electrical Engineering'),
+                  ),
+                  DropdownMenuItem<String>(
+                    value: 'Mechanical Enginerring',
+                    child: Text('Mechanical Engineering'),
+                  ),
+                  DropdownMenuItem<String>(
+                    value: 'Civil',
+                    child: Text('Civil'),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(
+              height: 30,
+
+            ),
+            Text(
+              'Choose Section',
+              style: TextStyle(fontSize: 25, fontWeight: FontWeight.w400),
+            ),
+            SizedBox(
+              height: 7,
+            ),
+            Container(
+              height: 45,
+              decoration: BoxDecoration(
+                border: Border.all(color: Colors.grey), // Set border color
+                borderRadius:
+                    BorderRadius.circular(6.0), // Set border radius if desired
+              ),
+              child: DropdownButton2<String>(
+                // padding: EdgeInsets.only(left: 10),
+                underline: Container(
+                  padding: EdgeInsets.symmetric(horizontal: 120),
+                  color: Colors.black,
+                ),
+                alignment: Alignment.center,
+                // buttonStyleData: ButtonStyleData(width: 200),
+                value: choosesection,
+                // icon: Icon(Icons.arrow_drop_down),
+                // iconSize: 24,
+                // elevation: 16,
+                // style: TextStyle(
+                //   color: Colors.grey,
+                // ),
+                style: GoogleFonts.montserrat(
+                  textStyle: TextStyle(
+                    color: Colors.grey,
+                    fontSize: 15,
+                    fontWeight: FontWeight.w600,
+                    // You can set other text style properties here
+                  ),
+                ),
+                // underline: Container(color: backgroundColor),
+                onChanged: (newValue) {
+                  setState(() {
+                    choosesection = newValue!;
+                  });
+                },
+                items: [
+                  DropdownMenuItem<String>(
+                    value: 'A',
+                    child: Text(
+                      'A',
+                    ),
+                  ),
+                  DropdownMenuItem<String>(
+                    value: 'B',
+                    child: Text('B'),
+                  ),
+                  DropdownMenuItem<String>(
+                    value: 'C',
+                    child: Text('C'),
+                  ),
+                  DropdownMenuItem<String>(
+                    value: 'D',
+                    child: Text('D'),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Text(
+              'Choose Semester',
+              style: TextStyle(fontSize: 25, fontWeight: FontWeight.w400),
+            ),
+            SizedBox(
+              height: 7,
+            ),
+            Container(
+              height: 45,
+              decoration: BoxDecoration(
+                border: Border.all(color: Colors.grey), // Set border color
+                borderRadius:
+                    BorderRadius.circular(6.0), // Set border radius if desired
+              ),
+              child: DropdownButton2<String>(
+                // padding: EdgeInsets.only(left: 10),
+                underline: Container(
+                  color: Colors.black,
+                ),
+                alignment: Alignment.center,
+                // buttonStyleData: ButtonStyleData(width: 200),
+                value: choosesemester,
+                // icon: Icon(Icons.arrow_drop_down),
+                // iconSize: 24,
+                // elevation: 16,
+                // style: TextStyle(
+                //   color: Colors.grey,
+                // ),
+                style: GoogleFonts.montserrat(
+                  textStyle: TextStyle(
+                    color: Colors.grey,
+                    fontSize: 15,
+                    fontWeight: FontWeight.w600,
+                    // You can set other text style properties here
+                  ),
+                ),
+                // underline: Container(color: backgroundColor),
+                onChanged: (newValue) {
+                  setState(() {
+                    choosesemester = newValue!;
+                  });
+                },
+                items: [
+                  DropdownMenuItem<String>(
+                    value: '1st',
+                    child: Text(
+                      '1st',
+                    ),
+                  ),
+                  DropdownMenuItem<String>(
+                    value: '2nd',
+                    child: Text('2nd'),
+                  ),
+                  DropdownMenuItem<String>(
+                    value: '3rd',
+                    child: Text('3rd'),
+                  ),
+                  DropdownMenuItem<String>(
+                    value: '4th',
+                    child: Text('4th'),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: Color(0xfffb0F5697)),
+                  onPressed: () {
+                    setState(() {});
+            
+                    // for (var student in studentsList) {
+                    //   if (student['course'] == choosecourse &&
+                    //       student['section'] == choosesection &&
+                    //       student['semester'] == choosesemester) {
+                    //     print('working ');
+                    //     print(student['name']);
+                    //     filteredStudents.add(student);
+                    //   }
+                    // }
+                    _fetchStudents();
+                    // Get.to(AttendanceView(), arguments: filteredStudents);
+                    // Get.to(ManualAttendance(student_list: filteredStudents));
+                  },
+                  child: Center(
+                    child: Text('Take Attendance',style: TextStyle(color: Colors.white),),
+                  )),
+            )
+                    ],
+                  ),
+          )),
     );
   }
 }

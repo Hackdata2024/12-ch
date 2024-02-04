@@ -26,13 +26,15 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   runApp(
-    GetMaterialApp(
+    GetMaterialApp( 
+
+      
       debugShowCheckedModeBanner: false,
       title: "Application",
       // initialRoute: AppPages.INITIAL,
       // home: LeaderboardView(),
-      home: OnboardingView(),
       home: Operator(),
+      // home: Operator(),
       getPages: AppPages.routes,
       // routes: {
       //   'UserChoiceView' : (context) => UserChoiceView(),

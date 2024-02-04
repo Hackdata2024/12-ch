@@ -17,7 +17,7 @@ class _GridCreatorState extends State<GridCreator> {
           padding: const EdgeInsets.all(10.0),
           child: Container(
             height: 200,
-            child: Center(child: Text("Google Drive",style: TextStyle(color: Colors.white,),)),
+            child: Center(child: Image.asset('assets/pngegg(4).png',fit: BoxFit.cover,height: 100,)),
             decoration: BoxDecoration(color: Color((0xfff0F5697)),borderRadius: BorderRadius.circular(12)),
             width: 200,
           ),

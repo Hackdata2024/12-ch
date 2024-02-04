@@ -16,17 +16,17 @@ List<LeaderBoardsModel> LeaderBoardsData = [
  //Hardcoded Dummy data//
 
 
-  LeaderBoardsModel(totalPoints: 10, branch: 'B-tech', semester: 4,name: "A"),
-  LeaderBoardsModel(totalPoints: 10, branch: 'B-tech', semester: 4,name: "B"),
-  LeaderBoardsModel(totalPoints: 20, branch: 'B-tech', semester: 4,name: "C"),
+  LeaderBoardsModel(totalPoints: 90, branch: 'B-tech', semester: 4,name: "Harsh"),
+  LeaderBoardsModel(totalPoints: 82, branch: 'B-tech', semester: 4,name: "Zaidi"),
+  LeaderBoardsModel(totalPoints: 79, branch: 'B-tech', semester: 4,name: "Sagrika"),
 
-  LeaderBoardsModel(totalPoints: 10, branch: 'B-tech', semester: 3,name: "D"),
-  LeaderBoardsModel(totalPoints: 70, branch: 'Ai/Ml', semester: 8,name: "E"),
-  LeaderBoardsModel(totalPoints: 10, branch: 'B-tech', semester: 4,name: "F"),
-  LeaderBoardsModel(totalPoints: 10, branch: 'B-tech', semester: 2,name: "I"),
-  LeaderBoardsModel(totalPoints: 40, branch: 'Ai/Ml', semester: 3,name: "G"),
-  LeaderBoardsModel(totalPoints: 50, branch: 'B-tech', semester: 2,name: "V"),
-  LeaderBoardsModel(totalPoints: 100, branch: 'B-tech', semester: 1,name: "QQ"),
+  LeaderBoardsModel(totalPoints: 74, branch: 'B-tech', semester: 3,name: "Mohit"),
+  LeaderBoardsModel(totalPoints: 72, branch: 'Ai/Ml', semester: 8,name: "Deepak"),
+  LeaderBoardsModel(totalPoints: 71, branch: 'B-tech', semester: 4,name: "Ali yasin"),
+  LeaderBoardsModel(totalPoints: 70, branch: 'B-tech', semester: 2,name: "Indrani"),
+  LeaderBoardsModel(totalPoints: 60, branch: 'Ai/Ml', semester: 3,name: "Ganesh"),
+  LeaderBoardsModel(totalPoints: 30, branch: 'B-tech', semester: 2,name: "Vinod"),
+  LeaderBoardsModel(totalPoints: 10, branch: 'B-tech', semester: 1,name: "Lalit"),
 
 
 ];

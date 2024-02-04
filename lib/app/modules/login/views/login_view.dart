@@ -3,9 +3,8 @@ import 'package:acadease/app/modules/signup/views/signup_view.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
-
-import '../controllers/login_controller.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import '../controllers/login_controller.dart';
 
 class LoginView extends GetView<LoginController> {
   LoginView({Key? key}) : super(key: key);
@@ -20,8 +19,8 @@ class LoginView extends GetView<LoginController> {
       // ...
 
       var result = await _auth.signInWithEmailAndPassword(
-        email: emailController.text.toString(),
-        password: passwordController.text.toString(),
+        email: emailController.text,
+        password: passwordController.text,
       );
       print('Login successful: $result');
       Get.off(() => HomeView());
@@ -35,12 +34,6 @@ class LoginView extends GetView<LoginController> {
         print('Unexpected Error: $e');
       }
     }
-  }
-
-  void dispose() {
-    Get.delete<LoginController>();
-    if (emailController != null) emailController.dispose();
-    if (passwordController != null) passwordController.dispose();
   }
 
   @override
@@ -193,14 +186,6 @@ class LoginView extends GetView<LoginController> {
                         controller: passwordController,
                       ),
                     ),
-                    // Padding(
-                    //   padding: const EdgeInsets.only(left: 10, top: 40),
-                    //   child: CustomButton(
-                    //       title: 'LOGIN',
-                    //       onTap: () {
-                    //         Get.to(OnboardingView());
-                    //       }),
-                    // )
                     SizedBox(
                       height: 30,
                     ),
@@ -219,8 +204,8 @@ class LoginView extends GetView<LoginController> {
                               print('Going to login');
                               login();
                               if (_formKey.currentState!.validate()) {
-                                print(emailController.text.toString());
-                                print(passwordController.text.toString());
+                                print(emailController.text);
+                                print(passwordController.text);
                                 login();
                               }
                             },

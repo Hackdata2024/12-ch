@@ -46,14 +46,22 @@ class ResourcesView extends GetView<ResourcesController> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 10),
+                    padding: const EdgeInsets.symmetric(horizontal: 2),
                     child: Container(
                       height: 20,
+                      child: Center(child: Row(
+                        
+                        children: [
+                          paddingAll(8),
+                        Text('Branch'),
+                        Icon(Icons.arrow_downward ,size: 17,)
+                      ],)),
                       width: 80,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(12),
                           color: Colors.white),
                       //  child: --> Drop Down Menu
+                      
                     ),
                   ),
                   Padding(

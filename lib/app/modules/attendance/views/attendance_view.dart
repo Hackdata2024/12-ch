@@ -1,3 +1,4 @@
+import 'package:acadease/app/modules/attendance/views/choose_class.dart';
 import 'package:acadease/app/modules/attendance/views/manual_attendance.dart';
 import 'package:acadease/models/student_model.dart';
 import 'package:flutter/material.dart';
@@ -13,8 +14,22 @@ class AttendanceView extends GetView<AttendanceController> {
     List<Student> students = Get.arguments as List<Student>;
     return Scaffold(
         appBar: AppBar(
+          leading: IconButton(
+            onPressed: () {
+              Get.to(ChooseClass());
+            },
+            icon: Icon(
+              Icons.arrow_back,
+              color: Colors.white,
+              size: 30,
+            ),
+          ),
           backgroundColor: Color(0xfffb0F5697),
-          title: const Text('Attendace'),
+          title: const Text(
+            'Attendance',
+            style: TextStyle(
+                color: Colors.white, fontSize: 25, fontWeight: FontWeight.bold),
+          ),
           centerTitle: true,
         ),
         body: Padding(

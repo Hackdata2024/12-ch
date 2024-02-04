@@ -29,28 +29,17 @@ class LeaderboardView extends GetView<LeaderboardController> {
             child: Column(
                     children: [
             SizedBox(height: 10,),
-            //Leader design
-                    //  Stack(
-                    //    alignment: AlignmentDirectional.bottomEnd,
-                    //    children: [
-                    //     Image.asset('assets/pngegg(2).png'),
-                    //     Positioned(
-                    //       bottom: 0,
-
-
-
-
-                          
-                          // Container(
-                          //            padding: EdgeInsets.all(12),
-                          //            height: 200,
-                          //            width: MediaQuery.of(context).size.width,
-                          //            decoration: BoxDecoration(
-                          //              color: Color(0xfff1C7DD7),
-                          //              borderRadius: BorderRadius.circular(12)
-                          //            ),
-                          //                        ),
-                        
+            
+                       Container(
+                  child:  Image.asset('assets/pngegg(3).png',fit: BoxFit.contain,),
+            padding: EdgeInsets.all(12),
+            height: 200,
+            width: MediaQuery.of(context).size.width,
+            decoration: BoxDecoration(
+              color: Color(0xfff1C7DD7),
+              borderRadius: BorderRadius.circular(12)
+            ),
+                     ), 
                     
             //Rank list column ..
             SizedBox(height: 10,),
