@@ -1,4 +1,6 @@
+import 'package:acadease/app/modules/assessment/views/assignment.dart';
 import 'package:acadease/app/modules/assessment/views/startQuiz.dart';
+import 'package:acadease/app/modules/home/views/home_view.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -13,7 +15,9 @@ class AssessmentView extends GetView<AssessmentController> {
       backgroundColor: Color(0xffC7D9EA),
       appBar: AppBar(
         leading: IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Get.to(HomeView());
+            },
             icon: Icon(
               Icons.arrow_back,
               size: 35,
@@ -35,7 +39,9 @@ class AssessmentView extends GetView<AssessmentController> {
               child: Padding(
                 padding: const EdgeInsets.symmetric(vertical: 25),
                 child: InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    Get.to(Assignment());
+                  },
                   child: Column(
                     children: [
                       Image.asset(

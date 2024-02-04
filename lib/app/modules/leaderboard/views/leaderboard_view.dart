@@ -1,3 +1,4 @@
+import 'package:acadease/app/modules/home/views/home_view.dart';
 import 'package:acadease/models/leaderboards_model.dart';
 import 'package:acadease/widgets/leaderboardscroll.dart';
 import 'package:flutter/material.dart';
@@ -13,7 +14,7 @@ class LeaderboardView extends GetView<LeaderboardController> {
     return Scaffold(
       backgroundColor: Color(0xfffC7D9EA),
       appBar: AppBar(
-        leading: Icon(Icons.arrow_back,color: Colors.white,size:32),
+        leading: IconButton(onPressed:(){ Get.to(HomeView());}, icon: Icon(Icons.arrow_back,color: Colors.white,size:32)),
         backgroundColor: Color(0xfff1C7DD7),
         title: const Text(
           'LeaderBoards',
@@ -40,17 +41,17 @@ class LeaderboardView extends GetView<LeaderboardController> {
 
 
                           
-                    //       child: Container(
-                    //                  padding: EdgeInsets.all(12),
-                    //                  height: 200,
-                    //                  width: MediaQuery.of(context).size.width,
-                    //                  decoration: BoxDecoration(
-                    //                    color: Color(0xfff1C7DD7),
-                    //                    borderRadius: BorderRadius.circular(12)
-                    //                  ),
-                    //                              ),
-                    //     ),
-                    // ],),
+                          // Container(
+                          //            padding: EdgeInsets.all(12),
+                          //            height: 200,
+                          //            width: MediaQuery.of(context).size.width,
+                          //            decoration: BoxDecoration(
+                          //              color: Color(0xfff1C7DD7),
+                          //              borderRadius: BorderRadius.circular(12)
+                          //            ),
+                          //                        ),
+                        
+                    
             //Rank list column ..
             SizedBox(height: 10,),
           
