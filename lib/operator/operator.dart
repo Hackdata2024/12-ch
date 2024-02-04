@@ -16,7 +16,7 @@ class _OperatorState extends State<Operator> {
   final Bottom_Nav = [
     HomeView(),
     Chats(),
-    ProfilePageView(),
+    
   ];
   Ontapped(int index) {
     setState(() {
