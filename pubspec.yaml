@@ -23,11 +23,14 @@ dependencies:
   http: ^1.1.0
   provider: ^6.1.1
   animated_text_kit: ^4.2.2
+  camera: ^0.10.5+9
+  google_ml_kit: ^0.16.3
+  image_picker: ^0.8.5+3
+  logger: ^1.1.0
   flutter_native_splash: ^2.3.7
   flutter_launcher_icons: ^0.13.1
     
   
-
 dev_dependencies: 
   flutter_lints: ^2.0.0
   flutter_test: 

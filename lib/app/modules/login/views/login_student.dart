@@ -220,24 +220,24 @@ class _LoginStudentState extends State<LoginStudent> {
                           ElevatedButton(
                               style: ElevatedButton.styleFrom(
                                   backgroundColor: Color(0xfff0F5697),
-                                  minimumSize: Size.fromHeight(40),
+                                  minimumSize: Size.fromHeight(50),
                                   shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(30))),
                               onPressed: () {
                                 login();
                               },
                               child: Center(
-                                child: Text('Login'),
+                                child: Text('Login',style:TextStyle(color: Colors.white,fontWeight: FontWeight.w500,fontSize: 18),),
                               )),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Text("Don't have an Account"),
+                              Text("Don't have an Account ?"),
                               TextButton(
                                   onPressed: () {
                                     Get.off(SignupStudent());
                                   },
-                                  child: Text('create Now'))
+                                  child: Text("Create Now",style:TextStyle(color: Colors.black,fontWeight: FontWeight.w500,fontSize: 15,),),),
                             ],
                           )
                         ],

@@ -238,7 +238,7 @@ class LoginView extends GetView<LoginController> {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Text("Don't Have an Account "),
+                              Text("Don't Have an Account ?"),
                               TextButton(
                                 onPressed: () {
                                   Get.off(SignupView());
