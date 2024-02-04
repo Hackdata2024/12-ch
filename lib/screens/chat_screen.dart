@@ -65,7 +65,7 @@ class _ChatScreenState extends State<ChatScreen> {
                   color: Colors.white,
                 ))
           ],
-          title: Text('ChatGPT'),
+          title: Text('Ask Your Question'),
         ),
         body: SafeArea(
             child: Column(
@@ -84,7 +84,7 @@ class _ChatScreenState extends State<ChatScreen> {
                                   color: Colors.white),
                             ),
                             Text(
-                              'Made with ❤️ By Harsh Nainwaya',
+                              'Made with ❤️ By Code Hunters',
                               style: TextStyle(color: Colors.white),
                             ),
                           ],

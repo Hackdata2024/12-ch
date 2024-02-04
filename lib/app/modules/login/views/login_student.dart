@@ -1,6 +1,7 @@
 import 'package:acadease/app/modules/home/views/home_student.dart';
 import 'package:acadease/app/modules/login/views/login_view.dart';
 import 'package:acadease/app/modules/signup/views/signup_student.dart';
+import 'package:acadease/operator/operator.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -32,7 +33,10 @@ class _LoginStudentState extends State<LoginStudent> {
         password: passwordController.text.toString(),
       );
       print('Login successful: $result');
-      Get.off(() => StudentHome(email: emailController.text.toString(),));
+      // Get.off(() => StudentHome(email: emailController.text.toString(),));
+      Get.off(Operator(
+        email: emailController.text.toString(),
+      ));
     } catch (e) {
       // Hide loading indicator
       // ...
@@ -62,25 +66,25 @@ class _LoginStudentState extends State<LoginStudent> {
           child: Stack(
             children: [
               Container(
-                height: 70,
-                width: 150,
-                child: Padding(
-                  padding: const EdgeInsets.only(left: 20, top: 48),
+                height: 90,
+                width: 200,
+                child: const Padding(
+                  padding: EdgeInsets.only(left: 20, top: 48),
                   child: Row(
                     children: [
                       Text(
-                        'Cod',
+                        'Acad',
                         style: TextStyle(
                             color: Color(0xffffffff),
-                            fontSize: 22,
+                            fontSize: 32,
                             fontFamily: 'Poppins',
                             fontWeight: FontWeight.bold),
                       ),
                       Text(
-                        'Grow',
+                        'ease',
                         style: TextStyle(
-                            color: Color(0xffF5DF00),
-                            fontSize: 22,
+                            color: Colors.black,
+                            fontSize: 32,
                             fontFamily: 'Poppins',
                             fontWeight: FontWeight.bold),
                       ),
@@ -101,7 +105,7 @@ class _LoginStudentState extends State<LoginStudent> {
                           Text(
                             "Welcome Student",
                             style: TextStyle(
-                                color: Colors.yellow,
+                                color: Colors.black,
                                 fontSize: 30,
                                 fontWeight: FontWeight.bold,
                                 fontFamily: 'poppins'),

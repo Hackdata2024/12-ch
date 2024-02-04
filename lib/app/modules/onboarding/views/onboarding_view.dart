@@ -1,3 +1,4 @@
+import 'package:acadease/app/modules/onboarding/views/onboarding2.dart';
 import 'package:acadease/app/modules/user_choice/views/user_choice_view.dart';
 import 'package:flutter/material.dart';
 
@@ -123,7 +124,8 @@ class OnboardingView extends GetView<OnboardingController> {
           ),
           InkWell(
             onTap: () {
-              Get.to(UserChoiceView());
+              // Get.to(UserChoiceView());
+              Get.to(Onboarding2());
             },
             child: Container(
               width: 380,

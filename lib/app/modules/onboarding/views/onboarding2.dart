@@ -1,4 +1,6 @@
+import 'package:acadease/app/modules/onboarding/views/onboarding3.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class Onboarding2 extends StatelessWidget {
   const Onboarding2({super.key});
@@ -15,38 +17,38 @@ class Onboarding2 extends StatelessWidget {
               padding: EdgeInsets.only(left: 20, top: 20),
               child: Row(
                 children: [
-                    SizedBox(
-              width: 90,
-            ),
-            Text(
-              'Acad',
-              style: TextStyle(
-                  color: Color(0xff0F5697),
-                  fontSize: 32,
-                  fontFamily: 'Poppins',
-                  fontWeight: FontWeight.bold),
-            ),
-            Text(
-              'ease',
-              style: TextStyle(
-                  color: Color(0xff000000),
-                  fontSize: 32,
-                  fontFamily: 'Poppins',
-                  fontWeight: FontWeight.bold),
-            ),
-            SizedBox(
-              width: 80,
-            ),
-             CircleAvatar(
-              radius: 25,
-              backgroundColor: Color(0xff0F5697),
-               child: Text('skip',
-                style: TextStyle(
-                   color: Colors.white,
-                    fontSize: 18,
-                    fontWeight: FontWeight.w400,
-                    fontFamily: 'poppins')),
-             ),
+                  SizedBox(
+                    width: 90,
+                  ),
+                  Text(
+                    'Acad',
+                    style: TextStyle(
+                        color: Color(0xff0F5697),
+                        fontSize: 32,
+                        fontFamily: 'Poppins',
+                        fontWeight: FontWeight.bold),
+                  ),
+                  Text(
+                    'ease',
+                    style: TextStyle(
+                        color: Color(0xff000000),
+                        fontSize: 32,
+                        fontFamily: 'Poppins',
+                        fontWeight: FontWeight.bold),
+                  ),
+                  SizedBox(
+                    width: 80,
+                  ),
+                  CircleAvatar(
+                    radius: 25,
+                    backgroundColor: Color(0xff0F5697),
+                    child: Text('skip',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 18,
+                            fontWeight: FontWeight.w400,
+                            fontFamily: 'poppins')),
+                  ),
                 ],
               ),
             ),
@@ -54,32 +56,31 @@ class Onboarding2 extends StatelessWidget {
           const SizedBox(
             height: 30,
           ),
-
           Image.asset('assets/3B.png'),
           const SizedBox(
             height: 20,
           ),
           const Row(
             mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-            Text(
-              'Take Your ',
-              style: TextStyle(
-                  color: Color(0xff0F5697),
-                  fontSize: 32,
-                  fontFamily: 'Poppins',
-                  fontWeight: FontWeight.bold),
-            ),
-            Text(
-              'Performance',
-              style: TextStyle(
-                  color: Color(0xff000000),
-                  fontSize: 32,
-                  fontFamily: 'Poppins',
-                  fontWeight: FontWeight.bold),
-            ),
-                ],
+            children: [
+              Text(
+                'Take Your ',
+                style: TextStyle(
+                    color: Color(0xff0F5697),
+                    fontSize: 32,
+                    fontFamily: 'Poppins',
+                    fontWeight: FontWeight.bold),
               ),
+              Text(
+                'Performance',
+                style: TextStyle(
+                    color: Color(0xff000000),
+                    fontSize: 32,
+                    fontFamily: 'Poppins',
+                    fontWeight: FontWeight.bold),
+              ),
+            ],
+          ),
           const Text('Implementing a robust performance',
               style: TextStyle(fontSize: 20, fontFamily: 'poppins')),
           const Text('tracking feature to monitor and',
@@ -92,11 +93,12 @@ class Onboarding2 extends StatelessWidget {
           const Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-             
               CircleAvatar(
                 radius: 10,
               ),
-               SizedBox(width: 5,),
+              SizedBox(
+                width: 5,
+              ),
               CircleAvatar(
                 radius: 10,
                 child: CircleAvatar(
@@ -104,7 +106,9 @@ class Onboarding2 extends StatelessWidget {
                   radius: 8,
                 ),
               ),
-              SizedBox(width: 5,),
+              SizedBox(
+                width: 5,
+              ),
               CircleAvatar(
                 radius: 10,
               ),
@@ -113,7 +117,11 @@ class Onboarding2 extends StatelessWidget {
           const SizedBox(
             height: 30,
           ),
-            Container(
+          InkWell(
+            onTap: () {
+              Get.to(Onboarding3());
+            },
+            child: Container(
               width: 360,
               height: 50,
               decoration: BoxDecoration(
@@ -131,8 +139,10 @@ class Onboarding2 extends StatelessWidget {
                 ),
               ),
             ),
+          ),
         ],
       ),
-    );;
+    );
+    ;
   }
 }

@@ -16,9 +16,9 @@ class HomeView extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: const Drawer(
-        surfaceTintColor: Colors.white,
-      ),
+      // drawer: const Drawer(
+      //   surfaceTintColor: Colors.white,
+      // ),
       appBar: AppBar(
         title: const Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -236,32 +236,27 @@ class HomeView extends GetView<HomeController> {
                       onTap: () {
                         Get.to(ChooseClass());
                       },
-                      child: InkWell(
-                        onTap: () {
-                          Get.to(AttendanceView());
-                        },
-                        child: Container(
-                          height: 120,
-                          width: 112,
-                          decoration: BoxDecoration(
-                            color: const Color(0xff0F5697),
-                            borderRadius: BorderRadius.circular(12),
-                          ),
-                          child: const Column(
-                            children: [
-                              SizedBox(
-                                height: 10,
-                              ),
-                              Image(image: AssetImage("assets/Attendance.png")),
-                              Text(
-                                'ATTENDANCE',
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.w500),
-                              ),
-                            ],
-                          ),
+                      child: Container(
+                        height: 120,
+                        width: 112,
+                        decoration: BoxDecoration(
+                          color: const Color(0xff0F5697),
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        child: const Column(
+                          children: [
+                            SizedBox(
+                              height: 10,
+                            ),
+                            Image(image: AssetImage("assets/Attendance.png")),
+                            Text(
+                              'ATTENDANCE',
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.w500),
+                            ),
+                          ],
                         ),
                       ),
                     ),
@@ -407,7 +402,6 @@ class HomeView extends GetView<HomeController> {
           ],
         ),
       ),
-      
     );
   }
 }
