@@ -6,13 +6,16 @@ import 'package:acadease/app/modules/leaderboard/views/leaderboard_view.dart';
 import 'package:acadease/app/modules/profile_page/views/profile_page_view.dart';
 import 'package:acadease/app/modules/resources/views/resources_view.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 import 'package:get/get.dart';
 
 import '../controllers/home_controller.dart';
 
 class HomeView extends GetView<HomeController> {
-  const HomeView({Key? key}) : super(key: key);
+   HomeView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +24,7 @@ class HomeView extends GetView<HomeController> {
       //   surfaceTintColor: Colors.white,
       // ),
       appBar: AppBar(
-        title: const Row(
+        title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             SizedBox(
@@ -79,7 +82,7 @@ class HomeView extends GetView<HomeController> {
                 ),
               ),
             ),
-            const SizedBox(
+             SizedBox(
               height: 5,
             ),
             Container(
