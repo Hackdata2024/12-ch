@@ -1,3 +1,4 @@
+import 'package:acadease/models/student_model.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
@@ -9,7 +10,8 @@ import 'package:get/get_core/src/get_main.dart';
 import '../../attendance/views/choose_class.dart';
 
 class StudentHome extends StatefulWidget {
-  const StudentHome({super.key});
+  String email;
+  StudentHome({super.key, required this.email});
 
   @override
   State<StudentHome> createState() => _StudentHomeState();
@@ -17,15 +19,59 @@ class StudentHome extends StatefulWidget {
 
 class _StudentHomeState extends State<StudentHome> {
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
+  List<Student> filteredStudents = [];
+  List<Map<String, dynamic>> studentsList = [];
+  bool isfounded = false;
+  late String isPresent = '';
+  late String isAbsent = '';
+  double h = 0.0;
+  Future<void> _fetchStudents() async {
+    try {
+      QuerySnapshot<Map<String, dynamic>> snapshot =
+          await _firestore.collection('students').get();
+
+      // Clear the previous list
+      studentsList.clear();
+      filteredStudents.clear();
+
+      // Add each student data to the list
+      for (QueryDocumentSnapshot<Map<String, dynamic>> doc in snapshot.docs) {
+        studentsList.add(doc.data());
+        for (var student in studentsList) {
+          if (student['email'] == widget.email) {
+            // print('working ');
+            print("Present Days  " + student['days_present'].toString());
+            print("Absent DAys  " + student['days_absent'].toString());
+            isAbsent = student['days_absent'].toString();
+            isPresent = student['days_present'].toString();
+            isfounded = true;
+            break;
+          }
+        }
+        print(studentsList.length);
+        if (isfounded == true) {
+          break;
+        }
+      }
+      // Get.to(AttendanceView(), arguments: filteredStudents);
+    } catch (e) {
+      // Handle any errors that may occur during the process
+      print('Error fetching students: $e');
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
+    void init() {
+      _fetchStudents();
+    }
+
     return Scaffold(
       drawer: const Drawer(
         surfaceTintColor: Colors.white,
       ),
       appBar: AppBar(
-        title: const Row(
+        title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             SizedBox(
@@ -101,10 +147,10 @@ class _StudentHomeState extends State<StudentHome> {
                         color: const Color(0xff00488A),
                         borderRadius: BorderRadius.circular(23),
                       ),
-                      child: const Column(
+                      child: Column(
                         children: [
                           Text(
-                            '3',
+                            '4',
                             style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 52,
@@ -135,14 +181,48 @@ class _StudentHomeState extends State<StudentHome> {
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(6),
                           ),
-                          child: const Center(
+                          child: Center(
                             child: Text(
-                              '',
+                              "Total Present Days: " + isPresent,
                               style: TextStyle(
-                                  color: Colors.white,
+                                  color: Colors.black,
                                   fontSize: 16,
                                   fontWeight: FontWeight.w500),
                             ),
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        Container(
+                          height: 30,
+                          width: 210,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(6),
+                          ),
+                          child: Center(
+                            child: Text(
+                              "Total Absent Days: " + isAbsent,
+                              style: TextStyle(
+                                  fontSize: 16, fontWeight: FontWeight.w500),
+                            ),
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        Container(
+                          height: 30,
+                          width: 210,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(6),
+                          ),
+                          child: Text(
+                            '',
+                            style: TextStyle(
+                                fontSize: 30, fontWeight: FontWeight.w500),
                           ),
                         ),
                         const SizedBox(
@@ -159,49 +239,7 @@ class _StudentHomeState extends State<StudentHome> {
                             child: Text(
                               '',
                               style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w500),
-                            ),
-                          ),
-                        ),
-                        const SizedBox(
-                          height: 10,
-                        ),
-                        Container(
-                          height: 30,
-                          width: 210,
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(6),
-                          ),
-                          child: const Center(
-                            child: Text(
-                              '',
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w500),
-                            ),
-                          ),
-                        ),
-                        const SizedBox(
-                          height: 10,
-                        ),
-                        Container(
-                          height: 30,
-                          width: 210,
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(6),
-                          ),
-                          child: const Center(
-                            child: Text(
-                              '',
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w500),
+                                  fontSize: 16, fontWeight: FontWeight.w500),
                             ),
                           ),
                         ),
@@ -234,7 +272,8 @@ class _StudentHomeState extends State<StudentHome> {
                   children: [
                     InkWell(
                       onTap: () {
-                        Get.to(ChooseClass());
+                        // Get.to(ChooseClass());
+                        _fetchStudents();
                       },
                       child: Container(
                         height: 120,

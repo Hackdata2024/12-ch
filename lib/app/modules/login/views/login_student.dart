@@ -32,7 +32,7 @@ class _LoginStudentState extends State<LoginStudent> {
         password: passwordController.text.toString(),
       );
       print('Login successful: $result');
-      Get.off(() => StudentHome());
+      Get.off(() => StudentHome(email: emailController.text.toString(),));
     } catch (e) {
       // Hide loading indicator
       // ...
