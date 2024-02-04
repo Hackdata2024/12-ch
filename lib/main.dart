@@ -33,7 +33,7 @@ Future<void> main() async {
       title: "Application",
       // initialRoute: AppPages.INITIAL,
       // home: LeaderboardView(),
-      home: Operator(),
+      home: OnboardingView(),
       // home: Operator(),
       getPages: AppPages.routes,
       // routes: {

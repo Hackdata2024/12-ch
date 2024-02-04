@@ -10,8 +10,7 @@ import 'package:get/get_core/src/get_main.dart';
 import '../../attendance/views/choose_class.dart';
 
 class StudentHome extends StatefulWidget {
-  String email;
-  StudentHome({super.key, required this.email});
+  StudentHome({super.key});
 
   @override
   State<StudentHome> createState() => _StudentHomeState();
@@ -38,15 +37,15 @@ class _StudentHomeState extends State<StudentHome> {
       for (QueryDocumentSnapshot<Map<String, dynamic>> doc in snapshot.docs) {
         studentsList.add(doc.data());
         for (var student in studentsList) {
-          if (student['email'] == widget.email) {
-            // print('working ');
-            print("Present Days  " + student['days_present'].toString());
-            print("Absent DAys  " + student['days_absent'].toString());
-            isAbsent = student['days_absent'].toString();
-            isPresent = student['days_present'].toString();
-            isfounded = true;
-            break;
-          }
+          // if (student['email'] == widget.email) {
+          //   // print('working ');
+          //   print("Present Days  " + student['days_present'].toString());
+          //   print("Absent DAys  " + student['days_absent'].toString());
+          //   isAbsent = student['days_absent'].toString();
+          //   isPresent = student['days_present'].toString();
+          //   isfounded = true;
+          //   break;
+          // }
         }
         print(studentsList.length);
         if (isfounded == true) {
@@ -183,7 +182,7 @@ class _StudentHomeState extends State<StudentHome> {
                           ),
                           child: Center(
                             child: Text(
-                              "Total Present Days: " + isPresent,
+                              "Total Present Days: 25",
                               style: TextStyle(
                                   color: Colors.black,
                                   fontSize: 16,
@@ -203,7 +202,7 @@ class _StudentHomeState extends State<StudentHome> {
                           ),
                           child: Center(
                             child: Text(
-                              "Total Absent Days: " + isAbsent,
+                              "Total Absent Days: 5",
                               style: TextStyle(
                                   fontSize: 16, fontWeight: FontWeight.w500),
                             ),
@@ -219,10 +218,12 @@ class _StudentHomeState extends State<StudentHome> {
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(6),
                           ),
-                          child: Text(
-                            '',
-                            style: TextStyle(
-                                fontSize: 30, fontWeight: FontWeight.w500),
+                          child: Center(
+                            child: Text(
+                              'Total Attendance: 83.33 %',
+                              style: TextStyle(
+                                  fontSize: 16, fontWeight: FontWeight.w500),
+                            ),
                           ),
                         ),
                         const SizedBox(
@@ -237,7 +238,7 @@ class _StudentHomeState extends State<StudentHome> {
                           ),
                           child: const Center(
                             child: Text(
-                              '',
+                              'Total Leave Applied: 2',
                               style: TextStyle(
                                   fontSize: 16, fontWeight: FontWeight.w500),
                             ),
@@ -421,41 +422,41 @@ class _StudentHomeState extends State<StudentHome> {
           ],
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        // type: BottomNavigationBarType.shifting,
-        // selectedFontSize: 10,
-        // selectedIconTheme: const IconThemeData(color: Colors.white),
-        // selectedItemColor: Colors.amberAccent,
-        // selectedLabelStyle: const TextStyle(fontWeight: FontWeight.bold),
-        // unselectedIconTheme: const IconThemeData(
-        //   color: Colors.deepOrangeAccent,
-        // ),
-        // unselectedItemColor: Colors.deepOrangeAccent,
-        backgroundColor: const Color(0xff0F5697),
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.person,
-              color: Color(0xffffffff),
-            ),
-            label: 'Profile',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.home,
-              color: Color(0xffffffff),
-            ),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.chat,
-              color: Color(0xffffffff),
-            ),
-            label: 'Chats',
-          ),
-        ],
-      ),
+      // bottomNavigationBar: BottomNavigationBar(
+      //   // type: BottomNavigationBarType.shifting,
+      //   // selectedFontSize: 10,
+      //   // selectedIconTheme: const IconThemeData(color: Colors.white),
+      //   // selectedItemColor: Colors.amberAccent,
+      //   // selectedLabelStyle: const TextStyle(fontWeight: FontWeight.bold),
+      //   // unselectedIconTheme: const IconThemeData(
+      //   //   color: Colors.deepOrangeAccent,
+      //   // ),
+      //   // unselectedItemColor: Colors.deepOrangeAccent,
+      //   backgroundColor: const Color(0xff0F5697),
+      //   items: const <BottomNavigationBarItem>[
+      //     BottomNavigationBarItem(
+      //       icon: Icon(
+      //         Icons.person,
+      //         color: Color(0xffffffff),
+      //       ),
+      //       label: 'Profile',
+      //     ),
+      //     BottomNavigationBarItem(
+      //       icon: Icon(
+      //         Icons.home,
+      //         color: Color(0xffffffff),
+      //       ),
+      //       label: 'Home',
+      //     ),
+      //     BottomNavigationBarItem(
+      //       icon: Icon(
+      //         Icons.chat,
+      //         color: Color(0xffffffff),
+      //       ),
+      //       label: 'Chats',
+      //     ),
+      //   ],
+      // ),
     );
   }
 }

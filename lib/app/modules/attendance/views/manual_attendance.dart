@@ -79,6 +79,7 @@ class _ManualAttendanceState extends State<ManualAttendance> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.lightBlue[100],
       appBar: AppBar(
         backgroundColor: Color(0xfffb0F5697),
         title: Text('Manual Attendance'),
@@ -97,32 +98,49 @@ class _ManualAttendanceState extends State<ManualAttendance> {
                 itemCount: widget.studentList.length,
                 itemBuilder: (context, index) {
                   return Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: ListTile(
-                      tileColor: widget.studentList[index].isPresent
-                          ? Colors.green
-                          : Colors.red,
-                      leading: Text(widget.studentList[index].roll_no),
-                      title: Text(widget.studentList[index].name),
-                      onTap: () {
-                        setState(() {
-                          widget.studentList[index].isPresent =
-                              !widget.studentList[index].isPresent;
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 30, vertical: 10),
+                    child: Container(
+                      height: 70,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(15)),
+                      child: ListTile(
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(15)),
+                        tileColor: widget.studentList[index].isPresent
+                            ? Colors.green
+                            : Colors.red,
+                        leading: Text(
+                          widget.studentList[index].roll_no,
+                          style: TextStyle(
+                              fontSize: 20, fontWeight: FontWeight.w600),
+                        ),
+                        title: Text(
+                          widget.studentList[index].name,
+                          style: TextStyle(
+                              fontSize: 20, fontWeight: FontWeight.w600),
+                        ),
+                        onTap: () {
+                          setState(() {
+                            widget.studentList[index].isPresent =
+                                !widget.studentList[index].isPresent;
 
-                          if (widget.studentList[index].isPresent) {
-                            print(widget.studentList[index].roll_no);
-                            print(widget.studentList[index].present_days + 1);
-                            updateDaysPresent(
-                                widget.studentList[index].roll_no);
-                            // updateAttendancePresent(
-                            //     widget.studentList[index].roll_no,
-                            //     widget.studentList[index].present_days + 1);
-                            // updateDaysPresent(widget.studentList[index].uid);
-                          } else {
-                            updateDaysAbsent(widget.studentList[index].roll_no);
-                          }
-                        });
-                      },
+                            if (widget.studentList[index].isPresent) {
+                              print(widget.studentList[index].roll_no);
+                              print(widget.studentList[index].present_days + 1);
+                              updateDaysPresent(
+                                  widget.studentList[index].roll_no);
+                              // updateAttendancePresent(
+                              //     widget.studentList[index].roll_no,
+                              //     widget.studentList[index].present_days + 1);
+                              // updateDaysPresent(widget.studentList[index].uid);
+                            } else {
+                              updateDaysAbsent(
+                                  widget.studentList[index].roll_no);
+                            }
+                          });
+                        },
+                      ),
                     ),
                   );
                 },

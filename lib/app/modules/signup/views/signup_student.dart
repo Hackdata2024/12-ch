@@ -50,15 +50,15 @@ class _SignupStudentState extends State<SignupStudent> {
           .doc(_enrollmentController.text.toString())
           .set({
         'name': _nameController.text,
-        'uid':userCredential.user!.uid,
-        
+        'uid': userCredential.user!.uid,
+
         'email': _emailController.text,
         'student_course': choosecourse,
         'student_section': choosesection,
         'student_semester': choosesemester,
         'student_enrollment': _enrollmentController.text,
-        'days_present':0,
-        'days_absent':0
+        'days_present': 0,
+        'days_absent': 0
         // Add other student details as needed
       });
 
@@ -83,37 +83,37 @@ class _SignupStudentState extends State<SignupStudent> {
       ),
       child: Scaffold(
         backgroundColor: Colors.transparent,
-        body: Stack(
-          children: [
-            Container(
-              height: 90,
-              width: 200,
-              child: const Padding(
-                padding: EdgeInsets.only(left: 20, top: 48),
-                child: Row(
-                  children: [
-                    Text(
-                      'Acad',
-                      style: TextStyle(
-                          color: Color(0xffffffff),
-                          fontSize: 32,
-                          fontFamily: 'Poppins',
-                          fontWeight: FontWeight.bold),
-                    ),
-                    Text(
-                      'ease',
-                      style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 32,
-                          fontFamily: 'Poppins',
-                          fontWeight: FontWeight.bold),
-                    ),
-                  ],
+        body: SingleChildScrollView(
+          child: Stack(
+            children: [
+              Container(
+                height: 90,
+                width: 200,
+                child: const Padding(
+                  padding: EdgeInsets.only(left: 20, top: 48),
+                  child: Row(
+                    children: [
+                      Text(
+                        'Acad',
+                        style: TextStyle(
+                            color: Color(0xffffffff),
+                            fontSize: 32,
+                            fontFamily: 'Poppins',
+                            fontWeight: FontWeight.bold),
+                      ),
+                      Text(
+                        'ease',
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 32,
+                            fontFamily: 'Poppins',
+                            fontWeight: FontWeight.bold),
+                      ),
+                    ],
+                  ),
                 ),
               ),
-            ),
-            SingleChildScrollView(
-              child: Column(
+              Column(
                 children: [
                   Container(
                     padding: const EdgeInsets.only(
@@ -132,14 +132,6 @@ class _SignupStudentState extends State<SignupStudent> {
                         ),
                         SizedBox(
                           height: 5,
-                        ),
-                        Text(
-                          "Sign in to Continue",
-                          style: TextStyle(
-                              color: Color(0xff0066FF),
-                              fontSize: 12,
-                              fontWeight: FontWeight.w500,
-                              fontFamily: 'poppins'),
                         ),
                       ],
                     ),
@@ -166,8 +158,8 @@ class _SignupStudentState extends State<SignupStudent> {
                     child: TextField(
                       keyboardType: TextInputType.emailAddress,
                       decoration: InputDecoration(
-                        contentPadding:
-                            const EdgeInsets.symmetric(vertical: 10, horizontal: 12),
+                        contentPadding: const EdgeInsets.symmetric(
+                            vertical: 10, horizontal: 12),
                         hintText: 'Email',
                         hoverColor: const Color(0xffFF5757),
                         fillColor: Colors.white,
@@ -199,8 +191,8 @@ class _SignupStudentState extends State<SignupStudent> {
                     ),
                     child: TextField(
                       decoration: InputDecoration(
-                        contentPadding:
-                            const EdgeInsets.symmetric(vertical: 10, horizontal: 12),
+                        contentPadding: const EdgeInsets.symmetric(
+                            vertical: 10, horizontal: 12),
                         hintText: 'Enter Your Name',
                         hoverColor: const Color(0xffFF5757),
                         fillColor: Colors.white,
@@ -233,8 +225,8 @@ class _SignupStudentState extends State<SignupStudent> {
                     child: TextField(
                       keyboardType: TextInputType.emailAddress,
                       decoration: InputDecoration(
-                        contentPadding:
-                            const EdgeInsets.symmetric(vertical: 10, horizontal: 12),
+                        contentPadding: const EdgeInsets.symmetric(
+                            vertical: 10, horizontal: 12),
                         hintText: 'Your Roll No',
                         hoverColor: const Color(0xffFF5757),
                         fillColor: Colors.white,
@@ -521,8 +513,8 @@ class _SignupStudentState extends State<SignupStudent> {
                       obscureText: true,
                       keyboardType: TextInputType.visiblePassword,
                       decoration: InputDecoration(
-                        contentPadding:
-                            const EdgeInsets.symmetric(vertical: 10, horizontal: 12),
+                        contentPadding: const EdgeInsets.symmetric(
+                            vertical: 10, horizontal: 12),
                         hintText: 'Password',
                         hoverColor: const Color(0xffFF5757),
                         fillColor: Colors.white,
@@ -554,7 +546,14 @@ class _SignupStudentState extends State<SignupStudent> {
                               _createAccount();
                             },
                             child: const Center(
-                              child: Text('Sign Up',style:TextStyle(color: Colors.white,fontWeight: FontWeight.w500,fontSize: 18,),),
+                              child: Text(
+                                'Sign Up',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 18,
+                                ),
+                              ),
                             )),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -572,8 +571,8 @@ class _SignupStudentState extends State<SignupStudent> {
                   )
                 ],
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

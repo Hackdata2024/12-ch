@@ -26,7 +26,7 @@ class Assignment extends GetView<AssessmentController> {
         ),
         leading: IconButton(
             onPressed: () {
-              Get.to(AssessmentView());
+              Get.to(AssessmentView(),);
             },
             icon: Icon(
               Icons.arrow_back,
